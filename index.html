@@ -366,109 +366,108 @@
     }
 
     /* ── SCHEDULE (WEEK GRID) ── */
+    .sched-header-row { margin-bottom: 32px; }
+
     .week-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
+      gap: 10px;
       align-items: start;
     }
-    @media(max-width:1000px){ .week-grid { grid-template-columns: 1fr 1fr; } }
-    @media(max-width:520px) { .week-grid { grid-template-columns: 1fr; } }
+    @media(max-width:860px){ .week-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:460px){ .week-grid { grid-template-columns: 1fr; } }
 
     .day-card {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 14px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 12px;
       overflow: hidden;
-      transition: all .3s;
+      transition: all .25s;
     }
-    .day-card:hover { background: rgba(255,255,255,.1); transform: translateY(-3px); }
+    .day-card:hover { background: rgba(255,255,255,.09); transform: translateY(-2px); }
 
     .day-header {
-      padding: 14px 16px 12px;
+      padding: 12px 14px 10px;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 5px;
     }
     .day-header--orange { background: var(--orange); }
-    .day-header--navy   { background: rgba(255,255,255,.15); border-bottom: 2px solid rgba(255,255,255,.2); }
+    .day-header--dim    { background: rgba(255,255,255,.1); border-bottom: 1px solid rgba(255,255,255,.12); }
     .day-header--yellow { background: var(--yellow); }
 
+    .day-label {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
     .day-en {
-      font-size: .68rem;
+      font-size: .62rem;
       font-weight: 800;
-      letter-spacing: 2.5px;
-      color: rgba(255,255,255,.6);
+      letter-spacing: 2px;
+      color: rgba(255,255,255,.55);
     }
     .day-header--yellow .day-en { color: rgba(27,42,74,.45); }
     .day-zh {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       font-weight: 900;
       color: white;
       line-height: 1;
     }
     .day-header--yellow .day-zh { color: var(--navy); }
     .day-theme {
-      font-size: .75rem;
-      color: rgba(255,255,255,.8);
-      margin-top: 4px;
+      font-size: .68rem;
+      color: rgba(255,255,255,.75);
       font-weight: 600;
     }
-    .day-header--yellow .day-theme { color: rgba(27,42,74,.7); }
+    .day-header--yellow .day-theme { color: rgba(27,42,74,.65); }
 
-    .day-body { padding: 16px 14px 18px; }
+    .day-body { padding: 12px 12px 14px; }
 
-    .slot { }
     .slot-time {
-      font-size: .7rem;
-      color: rgba(255,255,255,.4);
+      font-size: .65rem;
+      color: rgba(255,255,255,.35);
       font-weight: 600;
-      letter-spacing: .5px;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
+      letter-spacing: .3px;
     }
     .slot-name {
-      font-size: .97rem;
+      font-size: .88rem;
       font-weight: 800;
       color: white;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
     .slot-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 4px;
-      margin-bottom: 8px;
+      gap: 3px;
     }
     .slot-tags span {
-      background: rgba(255,183,3,.15);
-      border: 1px solid rgba(255,183,3,.3);
+      background: rgba(255,183,3,.13);
+      border: 1px solid rgba(255,183,3,.28);
       color: #ffe066;
-      padding: 1px 8px;
-      border-radius: 8px;
-      font-size: 10.5px;
+      padding: 1px 7px;
+      border-radius: 6px;
+      font-size: 10px;
       font-weight: 600;
-    }
-    .slot p {
-      font-size: .8rem;
-      color: rgba(255,255,255,.55);
-      line-height: 1.75;
     }
     .slot-divider {
       border: none;
-      border-top: 1px solid rgba(255,255,255,.1);
-      margin: 14px 0;
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin: 10px 0;
     }
     .sched-notice {
       display: flex;
       gap: 10px;
       align-items: flex-start;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 10px;
-      padding: 16px 20px;
-      margin-top: 28px;
-      font-size: .83rem;
-      color: rgba(255,255,255,.45);
-      line-height: 1.8;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 20px;
+      font-size: .78rem;
+      color: rgba(255,255,255,.38);
+      line-height: 1.75;
     }
 
     /* ── COURSE CARDS ── */
@@ -880,22 +879,22 @@
 ════════════════════════════════════════ -->
 <section class="bg-darker">
   <div class="container">
-    <span class="section-label">Weekly Schedule</span>
-    <h2 class="section-title" style="margin-bottom:10px;">每週固定運動主題，讓成長有節奏。</h2>
-    <p style="color:rgba(255,255,255,.65); font-size:.97rem; margin-bottom:16px; max-width:680px; line-height:1.8;">
-      從武術、體能、拳擊到翻滾訓練，透過規律課程安排，陪孩子穩定累積身體能力與心理素質。
-    </p>
-    <p style="color:rgba(255,255,255,.5); font-size:.88rem; margin-bottom:44px; max-width:640px; line-height:1.9;">
-      孩子的成長需要規律，也需要變化。武樂將每週課程安排成不同運動主題，讓孩子在固定節奏中培養習慣，也能透過多元訓練發展不同能力。每一天的課程都有明確目標：有時訓練協調與敏捷，有時練習紀律與專注，有時釋放能量、鍛鍊反應——讓孩子放學後的時間，不只是被安排，而是被好好運用。
-    </p>
+    <div class="sched-header-row">
+      <div>
+        <span class="section-label">Weekly Schedule</span>
+        <h2 class="section-title" style="margin-bottom:8px;">每週固定運動主題，<br/>讓成長有節奏。</h2>
+        <p style="color:rgba(255,255,255,.55); font-size:.88rem; max-width:400px; line-height:1.8;">
+          武術 × 體能 × 拳擊 × 翻滾，透過規律課程，陪孩子穩定累積身體能力與心理素質。
+        </p>
+      </div>
+    </div>
 
     <!-- 五天課表 -->
     <div class="week-grid">
 
       <div class="day-card">
         <div class="day-header day-header--orange">
-          <span class="day-en">MON</span>
-          <span class="day-zh">週一</span>
+          <div class="day-label"><span class="day-en">MON</span><span class="day-zh">週一</span></div>
           <span class="day-theme">武術 × 體能</span>
         </div>
         <div class="day-body">
@@ -903,22 +902,19 @@
             <div class="slot-time">17:00 – 18:00</div>
             <div class="slot-name">武術課</div>
             <div class="slot-tags"><span>禮儀</span><span>專注</span></div>
-            <p>從基本動作、步伐與反應練習開始，培養孩子的專注力與課堂紀律。</p>
           </div>
           <div class="slot-divider"></div>
           <div class="slot">
             <div class="slot-time">18:10 – 19:00</div>
             <div class="slot-name">體能課</div>
             <div class="slot-tags"><span>協調</span><span>敏捷</span></div>
-            <p>透過跑跳、平衡、核心與反應訓練，建立孩子的基礎運動能力。</p>
           </div>
         </div>
       </div>
 
       <div class="day-card">
-        <div class="day-header day-header--navy">
-          <span class="day-en">TUE</span>
-          <span class="day-zh">週二</span>
+        <div class="day-header day-header--dim">
+          <div class="day-label"><span class="day-en">TUE</span><span class="day-zh">週二</span></div>
           <span class="day-theme">武術 × 進階武術</span>
         </div>
         <div class="day-body">
@@ -926,22 +922,19 @@
             <div class="slot-time">17:00 – 18:00</div>
             <div class="slot-name">武術課</div>
             <div class="slot-tags"><span>穩定</span><span>紀律</span></div>
-            <p>透過規律的武術訓練，讓孩子學習站穩、聽清楚、做確實。</p>
           </div>
           <div class="slot-divider"></div>
           <div class="slot">
             <div class="slot-time">18:00 – 19:00</div>
             <div class="slot-name">進階武術課</div>
             <div class="slot-tags"><span>技巧</span><span>挑戰</span></div>
-            <p>適合已有基礎或想持續進步的孩子，透過更完整的動作練習累積自信。</p>
           </div>
         </div>
       </div>
 
       <div class="day-card">
         <div class="day-header day-header--orange">
-          <span class="day-en">WED</span>
-          <span class="day-zh">週三</span>
+          <div class="day-label"><span class="day-en">WED</span><span class="day-zh">週三</span></div>
           <span class="day-theme">拳擊 × 翻滾</span>
         </div>
         <div class="day-body">
@@ -949,22 +942,19 @@
             <div class="slot-time">17:00 – 18:00</div>
             <div class="slot-name">拳擊課</div>
             <div class="slot-tags"><span>反應</span><span>爆發</span></div>
-            <p>以安全、趣味的方式帶入拳擊訓練，提升孩子反應速度與行動力。</p>
           </div>
           <div class="slot-divider"></div>
           <div class="slot">
             <div class="slot-time">18:00 – 19:00</div>
             <div class="slot-name">翻滾課</div>
             <div class="slot-tags"><span>協調</span><span>勇氣</span></div>
-            <p>從基礎翻滾、支撐與保護動作開始，訓練孩子的身體控制與挑戰精神。</p>
           </div>
         </div>
       </div>
 
       <div class="day-card">
-        <div class="day-header day-header--navy">
-          <span class="day-en">THU</span>
-          <span class="day-zh">週四</span>
+        <div class="day-header day-header--dim">
+          <div class="day-label"><span class="day-en">THU</span><span class="day-zh">週四</span></div>
           <span class="day-theme">體能課</span>
         </div>
         <div class="day-body">
@@ -972,15 +962,13 @@
             <div class="slot-time">17:00 – 17:50</div>
             <div class="slot-name">體能課</div>
             <div class="slot-tags"><span>平衡</span><span>合作</span></div>
-            <p>透過關卡式訓練與團體活動，訓練孩子平衡感，也學習配合與等待。</p>
           </div>
         </div>
       </div>
 
       <div class="day-card">
         <div class="day-header day-header--yellow">
-          <span class="day-en">FRI</span>
-          <span class="day-zh">週五</span>
+          <div class="day-label"><span class="day-en">FRI</span><span class="day-zh">週五</span></div>
           <span class="day-theme">武術課</span>
         </div>
         <div class="day-body">
@@ -988,7 +976,6 @@
             <div class="slot-time">17:00 – 18:00</div>
             <div class="slot-name">武術課</div>
             <div class="slot-tags"><span>穩定</span><span>成就</span></div>
-            <p>延續一週的訓練節奏，透過武術基本功累積穩定度、自信與成就感。</p>
           </div>
         </div>
       </div>
@@ -997,7 +984,7 @@
 
     <div class="sched-notice">
       <span>⚠️</span>
-      <span>實際課程內容會依孩子年齡、程度、人數與當期安排調整。武樂重視安全與循序漸進，課程會以孩子能理解、能參與、能完成挑戰為原則。</span>
+      <span>實際課程內容會依孩子年齡、程度、人數與當期安排調整，課程以安全、循序漸進為原則。</span>
     </div>
   </div>
 </section>
