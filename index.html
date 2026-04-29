@@ -279,6 +279,58 @@
     .split-img img { width: 100%; height: 100%; object-fit: cover; }
     @media(max-width:768px){ .split { grid-template-columns: 1fr; gap: 36px; } }
 
+    /* ── S3 CARDS ── */
+    .s3-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all .3s;
+    }
+    .s3-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+    .s3-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 22px;
+    }
+    .s3-head--orange { background: var(--orange); }
+    .s3-head--navy   { background: var(--navy); }
+    .s3-head--yellow { background: var(--yellow); }
+    .s3-num {
+      font-size: 1rem;
+      font-weight: 900;
+      color: rgba(255,255,255,.55);
+      letter-spacing: 1px;
+    }
+    .s3-head--yellow .s3-num { color: rgba(27,42,74,.4); }
+    .s3-icon { font-size: 1.6rem; }
+    .s3-card h3 {
+      font-size: .98rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 20px 22px 10px;
+      line-height: 1.45;
+    }
+    .s3-card p {
+      font-size: .86rem;
+      color: var(--text-gray);
+      line-height: 1.85;
+      padding: 0 22px 24px;
+    }
+    .s3-footer {
+      margin-top: 52px;
+      text-align: center;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 800;
+      color: var(--navy);
+      padding: 28px 32px;
+      background: white;
+      border-radius: var(--radius);
+      border-left: 6px solid var(--orange);
+      box-shadow: var(--shadow);
+    }
+
     /* ── S2 CARDS ── */
     .s2-card {
       background: var(--bg-light);
@@ -688,33 +740,71 @@
 <section class="bg-light">
   <div class="container">
     <span class="section-label text-center" style="display:block;">Who Fits Here?</span>
-    <h2 class="section-title text-center">如果孩子有這些狀況，很適合來武樂</h2>
-    <div class="grid cols-5" style="margin-top:40px;">
-      <div class="card border-orange">
-        <span class="card-icon">⚡</span>
-        <h3>精力旺盛，需要放電</h3>
-        <p>透過運動課程釋放能量，幫助孩子更穩定。</p>
+    <h2 class="section-title text-center">什麼樣的孩子，適合在「武樂」<br/>開啟課後運動？</h2>
+    <p class="text-center" style="font-size:1rem; color:var(--orange); font-weight:600; margin-bottom:16px;">
+      不需具備運動基礎，只要願意嘗試，這裡就能成為孩子的成長起點。
+    </p>
+    <p class="text-center mx-auto" style="font-size:.93rem; color:var(--text-gray); max-width:680px; line-height:1.9; margin-bottom:12px;">
+      每個孩子都是獨一無二的：有的精力充沛，有的內斂害羞；有的需要更多專注練習，有的則需要一個安全的場域學會面對挑戰。
+    </p>
+    <p class="text-center mx-auto" style="font-size:.93rem; color:var(--navy); font-weight:600; max-width:640px; line-height:1.9; margin-bottom:52px;">
+      武樂的初衷，不是培養金牌選手。我們希望透過運動，陪孩子找到適合自己的情緒出口，並在一次次練習與挑戰中，一點一滴磨練出韌性、紀律與自信。
+    </p>
+
+    <div class="grid cols-3">
+      <div class="s3-card">
+        <div class="s3-head s3-head--orange">
+          <span class="s3-num">01</span>
+          <span class="s3-icon">⚡</span>
+        </div>
+        <h3>能量充沛：將活力轉化為專注</h3>
+        <p>孩子不是好動，而是需要正確的導引。透過拳擊、武術與體能訓練，讓爆發力轉化為更穩定的行動力與專注度。</p>
       </div>
-      <div class="card border-yellow">
-        <span class="card-icon">🎯</span>
-        <h3>容易分心，需要建立專注</h3>
-        <p>武術與拳擊課程強調聽指令、反應、節奏與紀律。</p>
+      <div class="s3-card">
+        <div class="s3-head s3-head--navy">
+          <span class="s3-num">02</span>
+          <span class="s3-icon">🎯</span>
+        </div>
+        <h3>容易分心：在指令中練習聚焦</h3>
+        <p>運動是很好的聽覺與視覺專注練習。在武樂，孩子需要觀察節奏、執行指令，進而建立聆聽與等待的耐心。</p>
       </div>
-      <div class="card border-navy">
-        <span class="card-icon">💪</span>
-        <h3>想培養自信與膽量</h3>
-        <p>從完成動作、挑戰關卡、上台展示中建立成就感。</p>
+      <div class="s3-card">
+        <div class="s3-head s3-head--yellow">
+          <span class="s3-num">03</span>
+          <span class="s3-icon">🏃</span>
+        </div>
+        <h3>靜態久坐：重啟身體的活力開關</h3>
+        <p>補足日常學習中較不足的活動量。我們結合跑跳、伸展與協調訓練，幫助久坐的孩子找回肢體的靈活與力量。</p>
       </div>
-      <div class="card border-orange">
-        <span class="card-icon">📱</span>
-        <h3>家長希望孩子少滑手機</h3>
-        <p>放學後安排固定運動，讓孩子建立健康生活習慣。</p>
+      <div class="s3-card">
+        <div class="s3-head s3-head--navy">
+          <span class="s3-num">04</span>
+          <span class="s3-icon">🌱</span>
+        </div>
+        <h3>內斂害羞：從小挑戰中累積自信</h3>
+        <p>我們不急著要求孩子挑戰高牆，而是從小任務的成功感開始。每完成一個動作，都是孩子勇敢跨出舒適圈的證明。</p>
       </div>
-      <div class="card border-yellow">
-        <span class="card-icon">📅</span>
-        <h3>想固定參加才藝課</h3>
-        <p>每週固定課程，方便家長安排接送與學習節奏。</p>
+      <div class="s3-card">
+        <div class="s3-head s3-head--orange">
+          <span class="s3-num">05</span>
+          <span class="s3-icon">📐</span>
+        </div>
+        <h3>尋求規律：內化紀律與自我管理</h3>
+        <p>運動精神的核心是尊重。孩子將在課程中學會遵守規則、尊重夥伴，從被動提醒，慢慢走向主動的自我管理。</p>
       </div>
+      <div class="s3-card">
+        <div class="s3-head s3-head--yellow">
+          <span class="s3-num">06</span>
+          <span class="s3-icon">💚</span>
+        </div>
+        <h3>健康優先：優質的課後時光提案</h3>
+        <p>不讓放學後只剩下螢幕與等待。為孩子安排一段有方向、有成長感的運動時光，讓身心健康成為放學後的另一種選擇。</p>
+      </div>
+    </div>
+
+    <!-- 收尾標語 -->
+    <div class="s3-footer">
+      讓放學後的每一分鐘，都成為孩子性格成長的黃金時段。
     </div>
   </div>
 </section>
