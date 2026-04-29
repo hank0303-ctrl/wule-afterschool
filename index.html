@@ -739,33 +739,84 @@
     .value-card:hover h3 { color: white; }
     .value-card:hover p { color: rgba(255,255,255,.72); }
 
-    /* ── PICKUP BLOCK ── */
-    .pickup-box {
+    /* ── PICKUP SECTION ── */
+    .pickup-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 48px;
+      align-items: start;
+    }
+    @media(max-width:900px){ .pickup-layout { grid-template-columns: 1fr; } }
+
+    .pickup-ways { display: flex; flex-direction: column; gap: 16px; }
+    .pw-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
       background: white;
-      border-radius: var(--radius);
-      padding: 42px 44px;
-      box-shadow: var(--shadow);
-      max-width: 800px;
-      margin: 0 auto;
+      border-radius: 12px;
+      padding: 16px 18px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
     }
-    .notice-block {
-      background: #fff8f0;
-      border-left: 4px solid var(--orange);
-      border-radius: 8px;
-      padding: 20px 24px;
-      margin-top: 26px;
+    .pw-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: #fff3e0;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .notice-block h4 { font-weight: 700; color: var(--orange); margin-bottom: 12px; }
-    .notice-block ul { list-style: none; }
-    .notice-block li {
-      padding: 4px 0 4px 20px;
-      position: relative;
-      font-size: .88rem;
+    .pw-item strong {
+      display: block;
+      font-size: .93rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .pw-item p {
+      font-size: .82rem;
       color: var(--text-gray);
-      line-height: 1.7;
+      line-height: 1.75;
     }
-    .notice-block li::before { content: '•'; position: absolute; left: 6px; color: var(--orange); font-weight: 700; }
-    @media(max-width:600px){ .pickup-box { padding: 26px 22px; } }
+
+    .pickup-remind-card {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      position: sticky;
+      top: 90px;
+    }
+    .prc-title {
+      font-size: .95rem;
+      font-weight: 800;
+      color: var(--yellow);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .prc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .prc-list li {
+      font-size: .82rem;
+      color: rgba(255,255,255,.7);
+      line-height: 1.8;
+      padding-left: 14px;
+      position: relative;
+    }
+    .prc-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+    }
 
     /* ── PRICING PLACEHOLDER ── */
     .pricing-card {
@@ -1446,26 +1497,66 @@
 </section>
 
 <!-- ══════════════════════════════════════
-     SECTION 8 — 接送銜接
+     SECTION 8 — 交通銜接
 ════════════════════════════════════════ -->
 <section class="bg-light" id="pickup">
   <div class="container">
-    <div class="pickup-box">
-      <span class="section-label">Transportation</span>
-      <h2 class="section-title">可協助學校／安親班銜接上課</h2>
-      <p class="section-desc" style="margin-bottom:20px;">
-        若孩子放學後需要從學校或安親班前往武樂參與課程，家長可先與我們討論實際地點、時間與路線。
-        我們會依照距離、人數與當日課程安排，評估是否可以協助接送銜接。
-      </p>
-      <div class="notice-block">
-        <h4>注意事項</h4>
-        <ul>
-          <li>接送需事前確認，不接受臨時安排。</li>
-          <li>實際可配合學校與時間，依當期人數與路線安排為準。</li>
-          <li>如需固定接送，建議提前預約討論。</li>
-          <li>若遇天候、學校臨時異動或特殊狀況，會以安全為優先調整。</li>
-        </ul>
+    <div class="pickup-layout">
+
+      <!-- 左側文字 -->
+      <div class="pickup-left">
+        <span class="section-label">Transportation</span>
+        <h2 class="section-title">放學後怎麼到武樂？<br/>可以先和我們討論</h2>
+        <p style="font-size:1rem; color:var(--orange); font-weight:600; margin-bottom:18px; line-height:1.7;">
+          每個孩子的放學時間與家庭安排不同，我們會協助家長評估合適的課程銜接方式。
+        </p>
+        <p style="font-size:.9rem; color:var(--text-gray); line-height:1.9; margin-bottom:12px;">
+          如果孩子放學後需要前往武樂上課，家長可以先告訴我們孩子的學校、年級、放學時間與希望參加的課程。
+        </p>
+        <p style="font-size:.9rem; color:var(--text-gray); line-height:1.9; margin-bottom:28px;">
+          我們會依實際地點、路線安全、人力配置與課程時段，協助評估是否有合適的銜接方式。若孩子原本已有安親班、補習班或其他才藝安排，也可以討論固定某幾天來武樂參與課程。
+        </p>
+
+        <!-- 三種銜接方式 -->
+        <div class="pickup-ways">
+          <div class="pw-item">
+            <div class="pw-icon">🕐</div>
+            <div>
+              <strong>放學後時段規劃</strong>
+              <p>依孩子放學時間與武樂課程時段，討論適合的參與方式。</p>
+            </div>
+          </div>
+          <div class="pw-item">
+            <div class="pw-icon">🚶</div>
+            <div>
+              <strong>步行銜接評估</strong>
+              <p>若學校或安親班距離合適，可依路線安全與人力狀況評估是否安排步行銜接。</p>
+            </div>
+          </div>
+          <div class="pw-item">
+            <div class="pw-icon">📅</div>
+            <div>
+              <strong>固定上課安排</strong>
+              <p>可依家庭需求，討論每週固定幾天參與武術、拳擊、體能或翻滾課程。</p>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- 右側提醒卡 -->
+      <div class="pickup-right">
+        <div class="pickup-remind-card">
+          <div class="prc-title">
+            <span>⚠️</span> 提醒
+          </div>
+          <ul class="prc-list">
+            <li>實際安排需事前確認，並依人力、路線、安全與相關規範評估。</li>
+            <li>武樂主要提供兒童運動才藝課程，交通銜接為課程參與前後之協助規劃，非一般安親、托育或課後照顧服務。</li>
+          </ul>
+          <a href="#contact" class="btn-primary" style="display:block; text-align:center; margin-top:24px;">加入 LINE 討論銜接方式</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
