@@ -279,6 +279,39 @@
     .split-img img { width: 100%; height: 100%; object-fit: cover; }
     @media(max-width:768px){ .split { grid-template-columns: 1fr; gap: 36px; } }
 
+    /* ── S2 CARDS ── */
+    .s2-card {
+      background: var(--bg-light);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      border-top: 4px solid var(--navy);
+      transition: all .3s;
+    }
+    .s2-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); background: white; }
+    .s2-card--orange { border-top-color: var(--orange); }
+    .s2-num {
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: rgba(27,42,74,.1);
+      line-height: 1;
+      margin-bottom: 10px;
+      font-family: 'Georgia', serif;
+    }
+    .s2-card--orange .s2-num { color: rgba(232,93,4,.12); }
+    .s2-card h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .s2-card--orange h3 { color: var(--orange); }
+    .s2-card p {
+      font-size: .88rem;
+      color: var(--text-gray);
+      line-height: 1.85;
+    }
+
     /* ── SCHEDULE ── */
     .sched-grid {
       display: grid;
@@ -602,39 +635,48 @@
 </section>
 
 <!-- ══════════════════════════════════════
-     SECTION 2 — 不是傳統安親
+     SECTION 2 — 放學後的成長
 ════════════════════════════════════════ -->
 <section class="bg-white">
   <div class="container">
     <div class="split">
       <div>
-        <span class="section-label">What is Wule?</span>
-        <h2 class="section-title">不是坐著等爸媽，<br/>而是放學後繼續動起來。</h2>
-        <p class="section-desc">
-          一般放學後，孩子可能長時間坐著寫功課、滑手機、等待接送。
-          武樂希望提供另一種選擇：讓孩子在安全、有規律的環境中，透過運動釋放精力、建立紀律、學習尊重，也培養更好的身體能力與自信心。
+        <span class="section-label">Why Wule?</span>
+        <h2 class="section-title">放學後，孩子的成長<br/>不只有課桌椅。</h2>
+        <p style="font-size:1.05rem; font-weight:600; color:var(--orange); margin-bottom:20px; line-height:1.7;">
+          一段釋放能量、建立自信的動態時光，<br/>是孩子身心平衡的關鍵。
         </p>
-        <div class="grid cols-3">
-          <div class="card border-orange">
-            <span class="card-icon">🥊</span>
-            <h3>運動才藝為核心</h3>
-            <p>以武術、拳擊、體能、翻滾等課程為主，讓孩子放學後有規律運動。</p>
-          </div>
-          <div class="card border-yellow">
-            <span class="card-icon">🚗</span>
-            <h3>協助銜接接送</h3>
-            <p>可依實際需求討論從學校或安親班接回武樂上課，減輕家長接送壓力。</p>
-          </div>
-          <div class="card border-navy">
-            <span class="card-icon">⭐</span>
-            <h3>品格與紀律養成</h3>
-            <p>透過運動建立專注、禮貌、勇氣、團隊合作與自我管理能力。</p>
-          </div>
-        </div>
+        <p style="font-size:.95rem; color:var(--text-gray); line-height:1.9; margin-bottom:16px;">
+          在學校專注學習一整天後，孩子需要的或許不是另一張課表，而是一個能活動身體、釋放能量，重新找回專注力的出口。
+        </p>
+        <p style="font-size:.95rem; color:var(--text-gray); line-height:1.9; margin-bottom:16px;">
+          武樂提供家長另一種課後提案：不只是被動等待，也不讓孩子被螢幕牽著走。我們透過規律的運動訓練，讓孩子在汗水中鍛鍊體能，也在動作轉換、聽從指令與完成挑戰的過程中，養成紀律、勇氣與自我管理能力。
+        </p>
+        <p style="font-size:.95rem; color:var(--navy); font-weight:600; line-height:1.9;">
+          在武樂，運動不只是體力的消耗，<br/>更是孩子心理素質與身體能力的深層建造。
+        </p>
       </div>
       <div class="split-img">
-        <!-- 替換成你的真實照片 -->
         <img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_02.jpg" alt="武樂課程實況" />
+      </div>
+    </div>
+
+    <!-- 三張核心價值卡片 -->
+    <div class="grid cols-3" style="margin-top:56px;">
+      <div class="s2-card">
+        <div class="s2-num">01</div>
+        <h3>啟動身體：舒緩學習疲勞</h3>
+        <p>長時間在課堂久坐後，孩子需要透過伸展、協調與肌力訓練，幫助身體重新啟動。我們讓身體動起來，也為下一階段的學習與生活儲備更飽滿的能量。</p>
+      </div>
+      <div class="s2-card s2-card--orange">
+        <div class="s2-num">02</div>
+        <h3>正向能量：轉化為專注力</h3>
+        <p>孩子的活力不該只是被壓抑，而是需要正確的出口。透過武術、拳擊與體能課程，引導孩子將爆發力轉化為控制力、反應力與行動力。</p>
+      </div>
+      <div class="s2-card">
+        <div class="s2-num">03</div>
+        <h3>性格養成：課本外的生命教育</h3>
+        <p>運動場也是最好的教室。在訓練中，孩子學習面對挑戰、尊重規則、配合夥伴，並在一次次完成任務的過程中，累積受用一生的自信心。</p>
       </div>
     </div>
   </div>
