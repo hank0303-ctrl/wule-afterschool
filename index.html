@@ -290,33 +290,34 @@
     .s3-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
     .s3-head {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 22px;
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px 22px 18px;
+      min-height: 90px;
+      justify-content: flex-end;
     }
     .s3-head--orange { background: var(--orange); }
     .s3-head--navy   { background: var(--navy); }
     .s3-head--yellow { background: var(--yellow); }
     .s3-num {
-      font-size: 1rem;
+      font-size: .78rem;
       font-weight: 900;
       color: rgba(255,255,255,.55);
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
     .s3-head--yellow .s3-num { color: rgba(27,42,74,.4); }
-    .s3-icon { font-size: 1.6rem; }
-    .s3-card h3 {
-      font-size: .98rem;
+    .s3-title {
+      font-size: .97rem;
       font-weight: 800;
-      color: var(--navy);
-      margin: 20px 22px 10px;
+      color: white;
       line-height: 1.45;
     }
+    .s3-head--yellow .s3-title { color: var(--navy); }
     .s3-card p {
       font-size: .86rem;
       color: var(--text-gray);
       line-height: 1.85;
-      padding: 0 22px 24px;
+      padding: 20px 22px 24px;
     }
     .s3-footer {
       margin-top: 52px;
@@ -755,49 +756,43 @@
       <div class="s3-card">
         <div class="s3-head s3-head--orange">
           <span class="s3-num">01</span>
-          <span class="s3-icon">⚡</span>
+          <span class="s3-title">能量充沛：將活力轉化為專注</span>
         </div>
-        <h3>能量充沛：將活力轉化為專注</h3>
         <p>孩子不是好動，而是需要正確的導引。透過拳擊、武術與體能訓練，讓爆發力轉化為更穩定的行動力與專注度。</p>
       </div>
       <div class="s3-card">
         <div class="s3-head s3-head--navy">
           <span class="s3-num">02</span>
-          <span class="s3-icon">🎯</span>
+          <span class="s3-title">容易分心：在指令中練習聚焦</span>
         </div>
-        <h3>容易分心：在指令中練習聚焦</h3>
         <p>運動是很好的聽覺與視覺專注練習。在武樂，孩子需要觀察節奏、執行指令，進而建立聆聽與等待的耐心。</p>
       </div>
       <div class="s3-card">
         <div class="s3-head s3-head--yellow">
           <span class="s3-num">03</span>
-          <span class="s3-icon">🏃</span>
+          <span class="s3-title">靜態久坐：重啟身體的活力開關</span>
         </div>
-        <h3>靜態久坐：重啟身體的活力開關</h3>
         <p>補足日常學習中較不足的活動量。我們結合跑跳、伸展與協調訓練，幫助久坐的孩子找回肢體的靈活與力量。</p>
       </div>
       <div class="s3-card">
         <div class="s3-head s3-head--navy">
           <span class="s3-num">04</span>
-          <span class="s3-icon">🌱</span>
+          <span class="s3-title">內斂害羞：從小挑戰中累積自信</span>
         </div>
-        <h3>內斂害羞：從小挑戰中累積自信</h3>
         <p>我們不急著要求孩子挑戰高牆，而是從小任務的成功感開始。每完成一個動作，都是孩子勇敢跨出舒適圈的證明。</p>
       </div>
       <div class="s3-card">
         <div class="s3-head s3-head--orange">
           <span class="s3-num">05</span>
-          <span class="s3-icon">📐</span>
+          <span class="s3-title">尋求規律：內化紀律與自我管理</span>
         </div>
-        <h3>尋求規律：內化紀律與自我管理</h3>
         <p>運動精神的核心是尊重。孩子將在課程中學會遵守規則、尊重夥伴，從被動提醒，慢慢走向主動的自我管理。</p>
       </div>
       <div class="s3-card">
         <div class="s3-head s3-head--yellow">
           <span class="s3-num">06</span>
-          <span class="s3-icon">💚</span>
+          <span class="s3-title">健康優先：優質的課後時光提案</span>
         </div>
-        <h3>健康優先：優質的課後時光提案</h3>
         <p>不讓放學後只剩下螢幕與等待。為孩子安排一段有方向、有成長感的運動時光，讓身心健康成為放學後的另一種選擇。</p>
       </div>
     </div>
