@@ -470,30 +470,95 @@
       line-height: 1.75;
     }
 
-    /* ── COURSE CARDS ── */
-    .course-card {
+    /* ── COURSE CARDS (new) ── */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    @media(max-width:720px){ .course-grid { grid-template-columns: 1fr; } }
+
+    .crs-card {
       background: white;
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
       transition: all .3s;
+      display: flex;
+      flex-direction: column;
     }
-    .course-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
-    .course-card-img { aspect-ratio: 16/9; overflow: hidden; }
-    .course-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s; }
-    .course-card:hover .course-card-img img { transform: scale(1.07); }
-    .course-body { padding: 22px 22px 24px; }
-    .course-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-    .ctag {
-      background: #fff3e0;
+    .crs-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+
+    .crs-img-wrap {
+      position: relative;
+      aspect-ratio: 16/7;
+      overflow: hidden;
+    }
+    .crs-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .45s;
+    }
+    .crs-card:hover .crs-img-wrap img { transform: scale(1.05); }
+
+    .crs-num-badge {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: var(--orange);
+      color: white;
+      font-size: .75rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .crs-body { padding: 24px 26px 28px; flex: 1; display: flex; flex-direction: column; }
+
+    .crs-kw {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .crs-kw span {
+      font-size: .82rem;
+      font-weight: 800;
       color: var(--orange);
-      padding: 3px 10px;
-      border-radius: 12px;
-      font-size: 11.5px;
-      font-weight: 700;
     }
-    .course-body h3 { font-size: 1.15rem; font-weight: 900; color: var(--navy); margin-bottom: 8px; }
-    .course-body p { font-size: .88rem; color: var(--text-gray); line-height: 1.75; }
+    .crs-kw span:nth-child(2) { color: #ccc; font-weight: 400; }
+
+    .crs-body h3 {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .crs-body p {
+      font-size: .88rem;
+      color: var(--text-gray);
+      line-height: 1.85;
+      flex: 1;
+    }
+    .crs-value {
+      margin-top: 18px;
+      background: #f8f4ef;
+      border-left: 3px solid var(--orange);
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      font-size: .82rem;
+      color: var(--text-gray);
+      line-height: 1.7;
+    }
+    .crs-value-label {
+      display: block;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--orange);
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
 
     /* ── PHOTO GALLERY ── */
     .photo-grid {
@@ -995,65 +1060,88 @@
 <section class="bg-light">
   <div class="container">
     <span class="section-label text-center" style="display:block;">Courses</span>
-    <h2 class="section-title text-center">孩子會學到什麼？</h2>
-    <div class="grid cols-4" style="margin-top:40px;">
-      <div class="course-card">
-        <div class="course-card-img">
-          <img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/about_wushu.jpg" alt="武術課" />
+    <h2 class="section-title text-center">專業課程介紹</h2>
+    <p class="text-center mx-auto" style="font-size:1rem; color:var(--orange); font-weight:600; margin-bottom:14px;">
+      不只是身體的活動，更是關於專注、自律與勇氣的深度養成。
+    </p>
+    <p class="text-center mx-auto" style="font-size:.9rem; color:var(--text-gray); max-width:640px; line-height:1.9; margin-bottom:52px;">
+      武樂的教學體系以「安全、循序漸進、穩定累積」為核心原則。教練會依據孩子的年齡、肢體發展與個別狀況調整課程強度，讓孩子從基礎出發，在穩紮穩打中建立體能、自信與運動習慣。我們不只在乎動作是否完成，更重視孩子在挑戰過程中展現出的韌性、態度與成長。
+    </p>
+
+    <div class="course-grid">
+
+      <div class="crs-card">
+        <div class="crs-img-wrap">
+          <img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/about_wushu.jpg" alt="兒童武術課" />
+          <div class="crs-num-badge">01</div>
         </div>
-        <div class="course-body">
-          <div class="course-tags">
-            <span class="ctag">禮儀</span>
-            <span class="ctag">紀律</span>
-            <span class="ctag">身體控制</span>
+        <div class="crs-body">
+          <div class="crs-kw">
+            <span>禮儀</span><span>×</span><span>專注</span>
           </div>
-          <h3>🥋 武術課</h3>
-          <p>透過基礎武術動作、步伐、反應與套路練習，培養孩子的專注力、穩定度與自我要求。</p>
+          <h3>兒童武術課</h3>
+          <p>從基本步伐、身法架勢與反應練習開始。透過武術課程的規範，引導孩子練習問好、聽從指令、保持專注。在一次次練習中，建立身體控制力與自我管理能力。</p>
+          <div class="crs-value">
+            <span class="crs-value-label">核心價值</span>
+            培養專注力、建立規律感與自律要求。
+          </div>
         </div>
       </div>
-      <div class="course-card">
-        <div class="course-card-img">
-          <img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/about_boxing.jpg" alt="拳擊課" />
+
+      <div class="crs-card">
+        <div class="crs-img-wrap">
+          <img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/about_boxing.jpg" alt="兒童拳擊課" />
+          <div class="crs-num-badge">02</div>
         </div>
-        <div class="course-body">
-          <div class="course-tags">
-            <span class="ctag">反應</span>
-            <span class="ctag">爆發力</span>
-            <span class="ctag">情緒釋放</span>
+        <div class="crs-body">
+          <div class="crs-kw">
+            <span>反應</span><span>×</span><span>爆發</span>
           </div>
-          <h3>🥊 拳擊課</h3>
-          <p>以安全、趣味的方式帶入拳擊訓練，提升孩子的反應速度、協調性與自信心。</p>
+          <h3>兒童拳擊課</h3>
+          <p>以安全且富有趣味性的方式導入基礎訓練。結合步伐移動、出拳練習與閃躲反應遊戲，提升孩子的手眼協調、反應速度與行動力，讓旺盛的能量轉化為正向的爆發力。</p>
+          <div class="crs-value">
+            <span class="crs-value-label">核心價值</span>
+            適合精力充沛、喜歡挑戰、需要能量出口的孩子。
+          </div>
         </div>
       </div>
-      <div class="course-card">
-        <div class="course-card-img">
-          <!-- 體能課照片 — 可替換 -->
-          <img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_03.jpg" alt="體能課" />
+
+      <div class="crs-card">
+        <div class="crs-img-wrap">
+          <img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_03.jpg" alt="兒童體能課" />
+          <div class="crs-num-badge">03</div>
         </div>
-        <div class="course-body">
-          <div class="course-tags">
-            <span class="ctag">敏捷</span>
-            <span class="ctag">協調</span>
-            <span class="ctag">基礎肌力</span>
+        <div class="crs-body">
+          <div class="crs-kw">
+            <span>協調</span><span>×</span><span>敏捷</span>
           </div>
-          <h3>🏃 體能課</h3>
-          <p>透過遊戲化訓練，建立孩子跑、跳、爬、平衡、反應等基礎運動能力。</p>
+          <h3>兒童體能課</h3>
+          <p>整合跑跳、平衡、核心與關卡式體能訓練。以遊戲化引導取代枯燥練習，讓孩子在有趣的任務挑戰中，提升基礎體能、敏捷反應與肢體協調感。</p>
+          <div class="crs-value">
+            <span class="crs-value-label">核心價值</span>
+            適合活動量不足、想強化基礎體能與身體穩定度的孩子。
+          </div>
         </div>
       </div>
-      <div class="course-card">
-        <div class="course-card-img">
-          <img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/modal_tumble.jpg" alt="翻滾課" />
+
+      <div class="crs-card">
+        <div class="crs-img-wrap">
+          <img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/modal_tumble.jpg" alt="兒童翻滾課" />
+          <div class="crs-num-badge">04</div>
         </div>
-        <div class="course-body">
-          <div class="course-tags">
-            <span class="ctag">勇氣</span>
-            <span class="ctag">空間感</span>
-            <span class="ctag">身體協調</span>
+        <div class="crs-body">
+          <div class="crs-kw">
+            <span>勇氣</span><span>×</span><span>控制</span>
           </div>
-          <h3>🤸 翻滾課</h3>
-          <p>從基礎翻滾、支撐、平衡與保護動作開始，讓孩子學會控制身體，也培養挑戰精神。</p>
+          <h3>兒童翻滾課</h3>
+          <p>從基礎翻滾、支撐、平衡與安全保護動作開始。引導孩子學習判斷空間位置，掌握身體重心轉換，並在一次次嘗試中，培養克服害怕、勇敢面對挑戰的能力。</p>
+          <div class="crs-value">
+            <span class="crs-value-label">核心價值</span>
+            強化空間感、肢體靈活度與面對挑戰的心理素質。
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
