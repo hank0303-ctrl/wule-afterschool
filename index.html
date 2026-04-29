@@ -641,31 +641,78 @@
       line-height: 1.7;
     }
 
-    /* ── FLOW STEPS ── */
-    .flow-wrap { max-width: 680px; margin: 0 auto; }
-    .flow-step { display: flex; gap: 22px; position: relative; }
-    .flow-step:not(:last-child)::before {
-      content: '';
-      position: absolute;
-      left: 23px; top: 52px; bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--orange), var(--yellow));
+    /* ── FLOW GRID ── */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
-    .flow-num {
-      flex-shrink: 0;
-      width: 48px; height: 48px;
-      background: var(--orange);
-      color: white;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 1.1rem;
-      position: relative; z-index: 1;
+    @media(max-width:820px){ .flow-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:500px){ .flow-grid { grid-template-columns: 1fr; } }
+
+    .flow-card {
+      background: var(--bg-light);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      border-top: 3px solid #ddd4c8;
+      transition: all .3s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
-    .flow-step:last-child .flow-num { background: var(--navy); }
-    .flow-body { padding-bottom: 38px; flex: 1; }
-    .flow-body h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin: 10px 0 6px; }
-    .flow-body p { font-size: .89rem; color: var(--text-gray); line-height: 1.78; }
-    .flow-note { font-size: .8rem; color: #aaa; margin-top: 5px; font-style: italic; }
+    .flow-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-top-color: var(--navy); }
+    .flow-card--highlight { border-top-color: var(--orange); background: #fff8f3; }
+    .flow-card--highlight:hover { border-top-color: var(--orange); }
+    .flow-card--note { border-top-color: #c5b8a8; }
+
+    .flow-card-num {
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #bbb;
+    }
+    .flow-card--highlight .flow-card-num { color: var(--orange); }
+
+    .flow-card-body h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .fc-badge {
+      font-size: .65rem;
+      font-weight: 700;
+      background: #fff3e0;
+      color: var(--orange);
+      padding: 2px 8px;
+      border-radius: 8px;
+    }
+    .flow-card-body p {
+      font-size: .86rem;
+      color: var(--text-gray);
+      line-height: 1.82;
+    }
+    .flow-card-note {
+      font-size: .78rem !important;
+      color: #aaa !important;
+      font-style: italic;
+      margin-top: 6px;
+      border-top: 1px dashed #e0d8d0;
+      padding-top: 8px;
+    }
+    .flow-disclaimer {
+      margin-top: 32px;
+      background: #f0ece7;
+      border-left: 3px solid #ccc4b8;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 20px;
+      font-size: .8rem;
+      color: #999;
+      line-height: 1.8;
+    }
 
     /* ── VALUE CARDS ── */
     .value-card {
@@ -1298,50 +1345,69 @@
 </section>
 
 <!-- ══════════════════════════════════════
-     SECTION 6 — 放學後流程
+     SECTION 7 — 課後銜接流程
 ════════════════════════════════════════ -->
 <section class="bg-white">
   <div class="container">
     <span class="section-label">After School Flow</span>
-    <h2 class="section-title">放學後怎麼安排？</h2>
-    <p class="section-desc">每個步驟都以孩子的安全與學習節奏為優先。</p>
-    <div class="flow-wrap">
-      <div class="flow-step">
-        <div class="flow-num">1</div>
-        <div class="flow-body">
-          <h3>放學銜接</h3>
-          <p>依家長需求與實際路線，討論是否可協助從學校或安親班銜接至武樂。</p>
+    <h2 class="section-title">專業、穩定的課後銜接流程</h2>
+    <p class="section-desc">從放學後銜接到課程開始，讓孩子在規律節奏中，練習獨立與自律。</p>
+
+    <div class="flow-grid">
+
+      <div class="flow-card">
+        <div class="flow-card-num">01</div>
+        <div class="flow-card-body">
+          <h3>課程銜接諮詢</h3>
+          <p>家長可事前與我們討論孩子放學後前往武樂的方式。實際安排會依人力配置、路線安全與課程時段評估。</p>
         </div>
       </div>
-      <div class="flow-step">
-        <div class="flow-num">2</div>
-        <div class="flow-body">
-          <h3>抵達武樂</h3>
-          <p>孩子抵達後進行點名、整理物品、喝水休息。</p>
+
+      <div class="flow-card">
+        <div class="flow-card-num">02</div>
+        <div class="flow-card-body">
+          <h3>報到與靜心準備</h3>
+          <p>抵達後進行報到、整理物品、補充水分。透過穩定的入館流程，幫助孩子轉換心情，準備進入運動狀態。</p>
         </div>
       </div>
-      <div class="flow-step">
-        <div class="flow-num">3</div>
-        <div class="flow-body">
-          <h3>安靜作業／閱讀時間</h3>
-          <p>課程前後可安排孩子在教室內安靜完成作業或閱讀。</p>
-          <p class="flow-note">此區為自主完成時段，非文理補習或作業保證完成服務。</p>
+
+      <div class="flow-card flow-card--note">
+        <div class="flow-card-num">03</div>
+        <div class="flow-card-body">
+          <h3>自主管理時光 <span class="fc-badge">限時段</span></h3>
+          <p>課程前可使用安靜空間，自主安排作業或閱讀。</p>
+          <p class="flow-card-note">此時段以自主管理為主，非文理補習、作業批改或作業保證完成服務。</p>
         </div>
       </div>
-      <div class="flow-step">
-        <div class="flow-num">4</div>
-        <div class="flow-body">
-          <h3>運動才藝課程</h3>
-          <p>依當天課表進行武術、拳擊、體能或翻滾課程。</p>
+
+      <div class="flow-card">
+        <div class="flow-card-num">04</div>
+        <div class="flow-card-body">
+          <h3>課前整備與暖身</h3>
+          <p>確認運動服裝、水壺與個人物品。教練會進行安全提醒與基礎暖身，讓孩子做好上課準備。</p>
         </div>
       </div>
-      <div class="flow-step">
-        <div class="flow-num">5</div>
-        <div class="flow-body">
-          <h3>家長接回</h3>
-          <p>課程結束後由家長接回，若需短時間等候可事先討論安排。</p>
+
+      <div class="flow-card flow-card--highlight">
+        <div class="flow-card-num">05</div>
+        <div class="flow-card-body">
+          <h3>專項運動課程</h3>
+          <p>依課表進行武術、拳擊、體能或翻滾訓練。教練會依孩子程度調整內容，兼顧安全與學習節奏。</p>
         </div>
       </div>
+
+      <div class="flow-card">
+        <div class="flow-card-num">06</div>
+        <div class="flow-card-body">
+          <h3>課後整理與返家</h3>
+          <p>課程結束後，孩子整理裝備、補充水分。完成整理後，由家長依約定時間接回。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flow-disclaimer">
+      武樂主要提供兒童運動才藝課程，課前與課後流程以課程銜接、安全秩序與孩子狀態調整為目的，非一般安親、托育或課後照顧服務。
     </div>
   </div>
 </section>
