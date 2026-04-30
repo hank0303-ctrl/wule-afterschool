@@ -39,6 +39,7 @@
     }
     .nav-logo { font-weight: 900; font-size: 1.1rem; color: white; text-decoration: none; }
     .nav-logo span { color: var(--orange); }
+    .nav-btns { display: flex; align-items: center; gap: 10px; }
     .nav-cta {
       background: var(--orange); color: white;
       padding: 9px 22px; border-radius: 24px;
@@ -46,6 +47,15 @@
       transition: all .25s;
     }
     .nav-cta:hover { background: #ff6b1a; }
+    .nav-cta-line {
+      background: transparent; color: rgba(255,255,255,.85);
+      border: 1.5px solid rgba(255,255,255,.35);
+      padding: 8px 20px; border-radius: 24px;
+      text-decoration: none; font-weight: 700; font-size: .88rem;
+      transition: all .25s;
+    }
+    .nav-cta-line:hover { border-color: white; color: white; }
+    @media(max-width:500px){ .nav-cta-line { display: none; } }
 
     /* ── SHARED ── */
     section { padding: 80px 24px; }
@@ -410,7 +420,10 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">武樂<span>運動</span></a>
-  <a href="https://lin.ee/Q8pqMSK" target="_blank" rel="noopener" class="nav-cta">加入 LINE 詢問</a>
+  <div class="nav-btns">
+    <a href="https://lin.ee/Q8pqMSK" target="_blank" rel="noopener" class="nav-cta-line">加入官方 LINE 詢問</a>
+    <a href="register.html" class="nav-cta">立即報名</a>
+  </div>
 </nav>
 
 <!-- ══ 01 HERO ══ -->
@@ -434,8 +447,8 @@
       <small>實際安排將依人力、路線安全與課程時段評估。</small>
     </p>
     <div class="hero-cta">
-      <a href="https://lin.ee/Q8pqMSK" target="_blank" rel="noopener" class="btn-primary">立即預約體驗課程</a>
-      <a href="https://lin.ee/Q8pqMSK" target="_blank" rel="noopener" class="btn-outline">加入官方 LINE 詢問</a>
+      <a href="https://lin.ee/Q8pqMSK" target="_blank" rel="noopener" class="btn-primary">加入官方 LINE 詢問</a>
+      <a href="register.html" class="btn-outline">立即報名</a>
     </div>
   </div>
 </section>
