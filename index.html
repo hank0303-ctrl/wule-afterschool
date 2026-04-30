@@ -260,17 +260,6 @@
 
     /* ══ 06 GALLERY + VALUES ══ */
     .gallery { background: var(--navy-dark); }
-    .gal-filters {
-      display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 24px;
-    }
-    .gf {
-      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.6); padding: 7px 14px; border-radius: 8px;
-      font-size: .8rem; font-weight: 600; cursor: pointer; font-family: inherit;
-      transition: all .22s;
-    }
-    .gf:hover { background: rgba(255,255,255,.13); color: white; }
-    .gf.active { background: var(--orange); border-color: var(--orange); color: white; }
     .gal-grid {
       display: grid; grid-template-columns: repeat(4,1fr); gap: 10px;
     }
@@ -680,27 +669,17 @@
     <p style="color:rgba(255,255,255,.5); font-size:.88rem; margin-bottom:26px; max-width:480px; line-height:1.8;">
       真實課程實況，記錄孩子從嘗試、練習到完成挑戰的瞬間。
     </p>
-    <div class="gal-filters">
-      <button class="gf active" data-cat="all">全部</button>
-      <button class="gf" data-cat="wushu">武術訓練｜穩定與專注</button>
-      <button class="gf" data-cat="boxing">拳擊訓練｜反應與爆發</button>
-      <button class="gf" data-cat="fitness">體能挑戰｜敏捷與合作</button>
-      <button class="gf" data-cat="tumble">翻滾練習｜勇氣與控制</button>
-      <button class="gf" data-cat="class">課堂互動｜尊重與等待</button>
-    </div>
     <div class="gal-grid" id="galGrid">
-      <div class="gi" data-cat="wushu"><img src="images/section2-wushu.jpg" alt="武術" /><span class="gi-label">武術訓練</span></div>
-      <div class="gi" data-cat="wushu"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/about_wushu.jpg" alt="武術" /><span class="gi-label">武術訓練</span></div>
-      <div class="gi" data-cat="wushu"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/modal_wushu.jpg" alt="武術" /><span class="gi-label">武術訓練</span></div>
-      <div class="gi" data-cat="boxing"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/about_boxing.jpg" alt="拳擊" /><span class="gi-label">拳擊訓練</span></div>
-      <div class="gi" data-cat="boxing"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/modal_boxing.jpg" alt="拳擊" /><span class="gi-label">拳擊訓練</span></div>
-      <div class="gi" data-cat="fitness"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_03.jpg" alt="體能" /><span class="gi-label">體能挑戰</span></div>
-      <div class="gi" data-cat="fitness"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_04.jpg" alt="體能" /><span class="gi-label">體能挑戰</span></div>
-      <div class="gi" data-cat="tumble"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/modal_tumble.jpg" alt="翻滾" /><span class="gi-label">翻滾練習</span></div>
-      <div class="gi" data-cat="class"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_05.jpg" alt="課堂" /><span class="gi-label">課堂互動</span></div>
-      <div class="gi" data-cat="class"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_06.jpg" alt="課堂" /><span class="gi-label">課堂互動</span></div>
-      <div class="gi" data-cat="class"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_07.jpg" alt="課堂" /><span class="gi-label">課堂互動</span></div>
-      <div class="gi" data-cat="fitness"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_08.jpg" alt="體能" /><span class="gi-label">體能挑戰</span></div>
+      <div class="gi"><img src="images/section2-wushu.jpg" alt="武術訓練" /><span class="gi-label">武術訓練</span></div>
+      <div class="gi"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/about_wushu.jpg" alt="武術訓練" /><span class="gi-label">武術訓練</span></div>
+      <div class="gi"><img src="images/course-boxing.jpg" alt="拳擊訓練" /><span class="gi-label">拳擊訓練</span></div>
+      <div class="gi"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/modal_boxing.jpg" alt="拳擊訓練" /><span class="gi-label">拳擊訓練</span></div>
+      <div class="gi"><img src="images/course-wushu.jpg" alt="武術訓練" /><span class="gi-label">武術訓練</span></div>
+      <div class="gi"><img src="images/course-fitness.jpg" alt="體能挑戰" /><span class="gi-label">體能挑戰</span></div>
+      <div class="gi"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_04.jpg" alt="體能挑戰" /><span class="gi-label">體能挑戰</span></div>
+      <div class="gi"><img src="images/course-tumble.jpg" alt="翻滾練習" /><span class="gi-label">翻滾練習</span></div>
+      <div class="gi"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_07.jpg" alt="課堂互動" /><span class="gi-label">課堂互動</span></div>
+      <div class="gi"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_08.jpg" alt="體能挑戰" /><span class="gi-label">體能挑戰</span></div>
     </div>
     <p class="gal-note">所有課程照片皆為武樂實際上課紀錄，課程內容會依孩子年齡、程度與當期安排調整。</p>
 
@@ -884,16 +863,6 @@
     if (!open) { el.classList.add('active'); a.classList.add('open'); }
   }
 
-  document.querySelectorAll('.gf').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.gf').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.cat;
-      document.querySelectorAll('.gi').forEach(item => {
-        item.classList.toggle('hidden', cat !== 'all' && item.dataset.cat !== cat);
-      });
-    });
-  });
 </script>
 
 </body>
