@@ -13,9 +13,8 @@ var HEADERS = [
   '特殊照護需求', '特殊照護說明',
   '需服藥', '服藥說明',
   '健康備註',
-  '接送方式', '可接回人員', '接送備註',
+  '是否需要接送', '學校或安親班名稱', '特殊接送備註',
   '飲食限制', '其他飲食禁忌',
-  '孩子身分證', '孩子生日（保險）', '戶籍地址', '法定代理人', '代理人身分證',
   '照片授權'
 ];
 
@@ -81,11 +80,6 @@ function doPost(e) {
       data.pickupNote         || '',
       data.diet               || '',
       data.dietNote           || '',
-      data.insChildId         || '',
-      data.insChildDob        || '',
-      data.insAddress         || '',
-      data.guardianName       || '',
-      data.guardianId         || '',
       data.photoConsent       || ''
     ];
 

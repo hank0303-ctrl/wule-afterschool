@@ -336,7 +336,7 @@
 
   <div class="terms-card">
     <h4><span class="num">八</span> 個人資料使用同意</h4>
-    <p>家長同意提供報名資料作為以下用途：課程報名、費用結算與聯繫；保險、健康與安全管理；課程通知、請假紀錄與緊急聯絡；武樂內部行政管理及課程紀錄。</p>
+    <p>家長同意提供報名資料作為以下用途：課程報名、費用結算與聯繫；健康與安全管理；課程通知、請假紀錄與緊急聯絡；武樂內部行政管理及課程紀錄。</p>
     <p style="margin-top:8px;">武樂將依個人資料保護相關規定妥善使用與保存資料，不會無故提供給無關第三方。</p>
   </div>
 
@@ -556,28 +556,22 @@
 
     <!-- E -->
     <div class="form-section">
-      <div class="sec-title"><span class="sec-tag">E</span> 接送資訊</div>
+      <div class="sec-title"><span class="sec-tag">E</span> 是否需要接送服務（僅提供上課前的接）</div>
 
       <div class="fr">
-        <label>課後由誰接送<span class="req">*</span></label>
-        <select name="pickup" required>
-          <option value="">請選擇</option>
-          <option>父母自行接送</option>
-          <option>其他家人接送</option>
-          <option>步行（武樂協助銜接）</option>
-          <option>學校／安親班銜接</option>
-          <option>其他</option>
-        </select>
-      </div>
-
-      <div class="fr">
-        <label>可接回孩子的人員姓名與電話</label>
-        <input type="text" name="pickupPerson" placeholder="姓名／電話，多位請以逗號分隔" />
+        <label>是否需要由我們從學校／安親班接至武樂<span class="req">*</span></label>
+        <div class="rg">
+          <label class="ro"><input type="radio" name="pickup" value="否" required /> 不需要</label>
+          <label class="ro"><input type="radio" name="pickup" value="是" /> 需要</label>
+        </div>
+        <div class="cond" id="cPickupPlace">
+          <input type="text" name="pickupPerson" placeholder="請填寫學校或安親班名稱" />
+        </div>
       </div>
 
       <div class="fr">
         <label>特殊接送備註</label>
-        <textarea name="pickupNote" placeholder="如有特殊接送時間、地點或其他需要說明的安排，請在此填寫。"></textarea>
+        <textarea name="pickupNote" placeholder="如有特殊銜接時間、地點或其他需要說明的安排，請在此填寫。"></textarea>
       </div>
     </div>
 
@@ -603,40 +597,7 @@
 
     <!-- G -->
     <div class="form-section">
-      <div class="sec-title"><span class="sec-tag">G</span> 保險資料</div>
-      <p style="font-size:.8rem; color:var(--gray); margin-bottom:16px; line-height:1.7;">以下資料用於辦理課程保險，請確實填寫。</p>
-
-      <div class="fg">
-        <div class="fr">
-          <label>孩子身分證字號<span class="req">*</span></label>
-          <input type="text" name="insChildId" required placeholder="A123456789" maxlength="10" style="text-transform:uppercase;" />
-        </div>
-        <div class="fr">
-          <label>孩子出生年月日<span class="req">*</span></label>
-          <input type="date" name="insChildDob" required />
-        </div>
-      </div>
-
-      <div class="fr">
-        <label>戶籍地址<span class="req">*</span></label>
-        <input type="text" name="insAddress" required placeholder="請填寫戶籍地址" />
-      </div>
-
-      <div class="fg">
-        <div class="fr">
-          <label>法定代理人姓名<span class="req">*</span></label>
-          <input type="text" name="guardianName" required />
-        </div>
-        <div class="fr">
-          <label>法定代理人身分證字號<span class="req">*</span></label>
-          <input type="text" name="guardianId" required placeholder="A123456789" maxlength="10" style="text-transform:uppercase;" />
-        </div>
-      </div>
-    </div>
-
-    <!-- H -->
-    <div class="form-section">
-      <div class="sec-title"><span class="sec-tag">H</span> 同意事項</div>
+      <div class="sec-title"><span class="sec-tag">G</span> 同意事項</div>
 
       <label class="cc">
         <input type="checkbox" name="c1" required />
@@ -728,6 +689,15 @@
   cond('medCond',     'cMedCond');
   cond('specialNeeds','cSpecialNeeds');
   cond('medication',  'cMedication');
+  cond('pickup',      'cPickupPlace');
+  document.querySelectorAll('[name="pickup"]').forEach(r => {
+    r.addEventListener('change', () => {
+      const input = document.querySelector('[name="pickupPerson"]');
+      const needsPickup = document.querySelector('[name="pickup"]:checked')?.value === '是';
+      input.required = needsPickup;
+      if (!needsPickup) input.value = '';
+    });
+  });
 
   /* Form submit */
   document.getElementById('regForm').addEventListener('submit', async function(e) {
