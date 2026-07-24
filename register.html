@@ -209,6 +209,26 @@
     .program-detail.show { display: block; }
     .program-detail strong { display: block; font-size: .88rem; margin-bottom: 4px; }
     .program-detail span { display: block; color: var(--gray); }
+    .program-course-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .program-course {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 9px 11px;
+      border: 1.5px solid #f0d9c9;
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .program-course:hover { border-color: var(--orange); }
+    .program-course.on { border-color: var(--orange); background: #fff1e8; }
+    .program-course input { margin-top: 4px; accent-color: var(--orange); }
+    .program-course span { color: var(--navy); font-size: .84rem; line-height: 1.55; }
 
     .cc {
       display: flex; align-items: flex-start; gap: 10px;
@@ -455,30 +475,42 @@
 
         <div class="program-detail" data-day="週一">
           <strong>週一｜武術 × 體能</strong>
-          <span>17:00–18:00｜武術課</span>
-          <span>18:10–19:00｜體能課</span>
+          <div class="program-course-list">
+            <label class="program-course"><input type="checkbox" name="programCourses" value="週一 17:00–18:00｜武術課" data-day="週一" /> <span>17:00–18:00｜武術課</span></label>
+            <label class="program-course"><input type="checkbox" name="programCourses" value="週一 18:10–19:00｜體能課" data-day="週一" /> <span>18:10–19:00｜體能課</span></label>
+          </div>
         </div>
         <div class="program-detail" data-day="週二">
           <strong>週二｜武術 × 進階武術</strong>
-          <span>17:00–18:00｜武術課</span>
-          <span>18:00–19:00｜進階武術課</span>
+          <div class="program-course-list">
+            <label class="program-course"><input type="checkbox" name="programCourses" value="週二 17:00–18:00｜武術課" data-day="週二" /> <span>17:00–18:00｜武術課</span></label>
+            <label class="program-course"><input type="checkbox" name="programCourses" value="週二 18:00–19:00｜進階武術課" data-day="週二" /> <span>18:00–19:00｜進階武術課</span></label>
+          </div>
         </div>
         <div class="program-detail" data-day="週三">
           <strong>週三｜拳擊 × 翻滾</strong>
-          <span>17:00–18:00｜拳擊課</span>
-          <span>18:00–19:00｜翻滾課</span>
+          <div class="program-course-list">
+            <label class="program-course"><input type="checkbox" name="programCourses" value="週三 17:00–18:00｜拳擊課" data-day="週三" /> <span>17:00–18:00｜拳擊課</span></label>
+            <label class="program-course"><input type="checkbox" name="programCourses" value="週三 18:00–19:00｜翻滾課" data-day="週三" /> <span>18:00–19:00｜翻滾課</span></label>
+          </div>
         </div>
         <div class="program-detail" data-day="週四">
           <strong>週四｜體能課</strong>
-          <span>17:00–17:50｜體能課</span>
+          <div class="program-course-list">
+            <label class="program-course"><input type="checkbox" name="programCourses" value="週四 17:00–17:50｜體能課" data-day="週四" /> <span>17:00–17:50｜體能課</span></label>
+          </div>
         </div>
         <div class="program-detail" data-day="週五">
           <strong>週五｜武術課</strong>
-          <span>17:00–18:00｜武術課</span>
+          <div class="program-course-list">
+            <label class="program-course"><input type="checkbox" name="programCourses" value="週五 17:00–18:00｜武術課" data-day="週五" /> <span>17:00–18:00｜武術課</span></label>
+          </div>
         </div>
         <div class="program-detail" data-day="全日班（月費）">
           <strong>全日班（月費）</strong>
-          <span>週一至週五固定參與，實際課程、接送銜接與費用由武樂 LINE 另行確認。</span>
+          <div class="program-course-list">
+            <label class="program-course"><input type="checkbox" name="programCourses" value="全日班（月費） 週一至週五固定參與" data-day="全日班（月費）" /> <span>週一至週五固定參與，實際課程、接送銜接與費用由武樂 LINE 另行確認。</span></label>
+          </div>
         </div>
       </div>
     </div>
@@ -729,22 +761,26 @@
     });
   });
 
-  const programDetails = {
-    '週一': '週一｜武術 × 體能：17:00–18:00 武術課；18:10–19:00 體能課',
-    '週二': '週二｜武術 × 進階武術：17:00–18:00 武術課；18:00–19:00 進階武術課',
-    '週三': '週三｜拳擊 × 翻滾：17:00–18:00 拳擊課；18:00–19:00 翻滾課',
-    '週四': '週四｜體能課：17:00–17:50 體能課',
-    '週五': '週五｜武術課：17:00–18:00 武術課',
-    '全日班（月費）': '全日班（月費）：週一至週五固定參與，實際課程、接送銜接與費用由武樂 LINE 另行確認'
-  };
   function updateProgramDetails() {
     const selected = [...document.querySelectorAll('[name="programDays"]:checked')].map(cb => cb.value);
     document.querySelectorAll('.program-detail').forEach(item => {
-      item.classList.toggle('show', selected.includes(item.dataset.day));
+      const isOpen = selected.includes(item.dataset.day);
+      item.classList.toggle('show', isOpen);
+      if (!isOpen) {
+        item.querySelectorAll('[name="programCourses"]').forEach(cb => {
+          cb.checked = false;
+          cb.closest('.program-course').classList.remove('on');
+        });
+      }
     });
   }
   document.querySelectorAll('[name="programDays"]').forEach(cb => {
     cb.addEventListener('change', updateProgramDetails);
+  });
+  document.querySelectorAll('[name="programCourses"]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      cb.closest('.program-course').classList.toggle('on', cb.checked);
+    });
   });
 
   /* Conditional fields */
@@ -788,6 +824,13 @@
     if (programs.length === 0) {
       alert('請至少選擇一個報名項目。'); return;
     }
+    const courses = [...this.querySelectorAll('[name="programCourses"]:checked')].map(cb => cb.value);
+    for (const day of programs) {
+      const hasCourse = courses.some(course => course.startsWith(day));
+      if (!hasCourse) {
+        alert(`請勾選 ${day} 要參加的課程。`); return;
+      }
+    }
 
     const data = {};
     const fd   = new FormData(this);
@@ -795,8 +838,8 @@
     this.querySelectorAll('[name="diet"]:checked').forEach(cb => diets.push(cb.value));
     data.diet = diets.join('、') || '未填寫';
     data.programItems = programs.join('、');
-    data.programDetails = programs.map(v => programDetails[v]).join('\n');
-    fd.forEach((v, k) => { if (k !== 'diet' && k !== 'programDays') data[k] = v; });
+    data.programDetails = courses.join('\n');
+    fd.forEach((v, k) => { if (k !== 'diet' && k !== 'programDays' && k !== 'programCourses') data[k] = v; });
     data.submitTime = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
 
     const btn = document.getElementById('submitBtn');
