@@ -189,6 +189,27 @@
     }
     .cond input:focus, .cond textarea:focus { border-color: var(--orange); }
 
+    .program-hint {
+      font-size: .78rem;
+      color: var(--gray);
+      line-height: 1.7;
+      margin: -6px 0 12px;
+    }
+    .program-detail {
+      display: none;
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-left: 4px solid var(--orange);
+      border-radius: 8px;
+      background: #fff7f1;
+      color: var(--navy);
+      font-size: .84rem;
+      line-height: 1.7;
+    }
+    .program-detail.show { display: block; }
+    .program-detail strong { display: block; font-size: .88rem; margin-bottom: 4px; }
+    .program-detail span { display: block; color: var(--gray); }
+
     .cc {
       display: flex; align-items: flex-start; gap: 10px;
       padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 8px;
@@ -418,7 +439,53 @@
 
     <!-- B -->
     <div class="form-section">
-      <div class="sec-title"><span class="sec-tag">B</span> 家長資料</div>
+      <div class="sec-title"><span class="sec-tag">B</span> 報名項目（可複選）</div>
+      <p class="program-hint">請先勾選想參與的星期，勾選後下方會顯示對應時間與課程。實際安排仍以武樂 LINE 確認為準。</p>
+
+      <div class="fr">
+        <label>想參與的課程時段<span class="req">*</span></label>
+        <div class="cg" id="programOptions">
+          <label class="co"><input type="checkbox" name="programDays" value="週一" /> 週一</label>
+          <label class="co"><input type="checkbox" name="programDays" value="週二" /> 週二</label>
+          <label class="co"><input type="checkbox" name="programDays" value="週三" /> 週三</label>
+          <label class="co"><input type="checkbox" name="programDays" value="週四" /> 週四</label>
+          <label class="co"><input type="checkbox" name="programDays" value="週五" /> 週五</label>
+          <label class="co"><input type="checkbox" name="programDays" value="全日班（月費）" /> 全日班（月費）</label>
+        </div>
+
+        <div class="program-detail" data-day="週一">
+          <strong>週一｜武術 × 體能</strong>
+          <span>17:00–18:00｜武術課</span>
+          <span>18:10–19:00｜體能課</span>
+        </div>
+        <div class="program-detail" data-day="週二">
+          <strong>週二｜武術 × 進階武術</strong>
+          <span>17:00–18:00｜武術課</span>
+          <span>18:00–19:00｜進階武術課</span>
+        </div>
+        <div class="program-detail" data-day="週三">
+          <strong>週三｜拳擊 × 翻滾</strong>
+          <span>17:00–18:00｜拳擊課</span>
+          <span>18:00–19:00｜翻滾課</span>
+        </div>
+        <div class="program-detail" data-day="週四">
+          <strong>週四｜體能課</strong>
+          <span>17:00–17:50｜體能課</span>
+        </div>
+        <div class="program-detail" data-day="週五">
+          <strong>週五｜武術課</strong>
+          <span>17:00–18:00｜武術課</span>
+        </div>
+        <div class="program-detail" data-day="全日班（月費）">
+          <strong>全日班（月費）</strong>
+          <span>週一至週五固定參與，實際課程、接送銜接與費用由武樂 LINE 另行確認。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- C -->
+    <div class="form-section">
+      <div class="sec-title"><span class="sec-tag">C</span> 家長資料</div>
 
       <div class="fg">
         <div class="fr">
@@ -449,9 +516,9 @@
       </div>
     </div>
 
-    <!-- C -->
+    <!-- D -->
     <div class="form-section">
-      <div class="sec-title"><span class="sec-tag">C</span> 緊急聯絡人</div>
+      <div class="sec-title"><span class="sec-tag">D</span> 緊急聯絡人</div>
 
       <div class="fg">
         <div class="fr">
@@ -476,9 +543,9 @@
       </div>
     </div>
 
-    <!-- D -->
+    <!-- E -->
     <div class="form-section">
-      <div class="sec-title"><span class="sec-tag">D</span> 健康與安全</div>
+      <div class="sec-title"><span class="sec-tag">E</span> 健康與安全</div>
 
       <div class="fr">
         <label>是否有食物過敏<span class="req">*</span></label>
@@ -541,9 +608,9 @@
       </div>
     </div>
 
-    <!-- E -->
+    <!-- F -->
     <div class="form-section">
-      <div class="sec-title"><span class="sec-tag">E</span> 是否需要接送服務（僅提供上課前的接）</div>
+      <div class="sec-title"><span class="sec-tag">F</span> 是否需要接送服務（僅提供上課前的接）</div>
 
       <div class="fr">
         <label>是否需要由我們從學校／安親班接至武樂<span class="req">*</span></label>
@@ -562,9 +629,9 @@
       </div>
     </div>
 
-    <!-- F -->
+    <!-- G -->
     <div class="form-section">
-      <div class="sec-title"><span class="sec-tag">F</span> 餐食</div>
+      <div class="sec-title"><span class="sec-tag">G</span> 餐食</div>
 
       <div class="fr">
         <label>飲食限制（可多選）</label>
@@ -582,9 +649,9 @@
       </div>
     </div>
 
-    <!-- G -->
+    <!-- H -->
     <div class="form-section">
-      <div class="sec-title"><span class="sec-tag">G</span> 同意事項</div>
+      <div class="sec-title"><span class="sec-tag">H</span> 同意事項</div>
 
       <label class="cc">
         <input type="checkbox" name="c1" required />
@@ -662,6 +729,24 @@
     });
   });
 
+  const programDetails = {
+    '週一': '週一｜武術 × 體能：17:00–18:00 武術課；18:10–19:00 體能課',
+    '週二': '週二｜武術 × 進階武術：17:00–18:00 武術課；18:00–19:00 進階武術課',
+    '週三': '週三｜拳擊 × 翻滾：17:00–18:00 拳擊課；18:00–19:00 翻滾課',
+    '週四': '週四｜體能課：17:00–17:50 體能課',
+    '週五': '週五｜武術課：17:00–18:00 武術課',
+    '全日班（月費）': '全日班（月費）：週一至週五固定參與，實際課程、接送銜接與費用由武樂 LINE 另行確認'
+  };
+  function updateProgramDetails() {
+    const selected = [...document.querySelectorAll('[name="programDays"]:checked')].map(cb => cb.value);
+    document.querySelectorAll('.program-detail').forEach(item => {
+      item.classList.toggle('show', selected.includes(item.dataset.day));
+    });
+  }
+  document.querySelectorAll('[name="programDays"]').forEach(cb => {
+    cb.addEventListener('change', updateProgramDetails);
+  });
+
   /* Conditional fields */
   function cond(name, id) {
     document.querySelectorAll(`[name="${name}"]`).forEach(r => {
@@ -699,13 +784,19 @@
     if (!document.querySelector('[name="photoConsent"]:checked')) {
       alert('請選擇照片／影片使用授權方式。'); return;
     }
+    const programs = [...this.querySelectorAll('[name="programDays"]:checked')].map(cb => cb.value);
+    if (programs.length === 0) {
+      alert('請至少選擇一個報名項目。'); return;
+    }
 
     const data = {};
     const fd   = new FormData(this);
     const diets = [];
     this.querySelectorAll('[name="diet"]:checked').forEach(cb => diets.push(cb.value));
     data.diet = diets.join('、') || '未填寫';
-    fd.forEach((v, k) => { if (k !== 'diet') data[k] = v; });
+    data.programItems = programs.join('、');
+    data.programDetails = programs.map(v => programDetails[v]).join('\n');
+    fd.forEach((v, k) => { if (k !== 'diet' && k !== 'programDays') data[k] = v; });
     data.submitTime = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
 
     const btn = document.getElementById('submitBtn');

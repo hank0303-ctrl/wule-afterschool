@@ -5,6 +5,7 @@ var NOTIFY_EMAIL = 'a0986517659@gmail.com';
 var HEADERS = [
   '送出時間',
   '孩子姓名', '性別', '出生年月日', '年級', '就讀學校', '曾參加武樂課程',
+  '報名項目', '課程時間',
   '家長姓名', '與孩子關係', '手機', 'LINE 名稱',
   '緊急聯絡人', '緊急聯絡關係', '緊急聯絡電話',
   '食物過敏', '食物過敏說明',
@@ -57,6 +58,8 @@ function doPost(e) {
       data.grade              || '',
       data.school             || '',
       data.returning          || '',
+      data.programItems       || '',
+      data.programDetails     || '',
       data.parentName         || '',
       data.relation           || '',
       data.phone              || '',
