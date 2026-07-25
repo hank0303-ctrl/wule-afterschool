@@ -148,6 +148,64 @@
     }
     .hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 
+    /* ══ FEATURE VIDEO ══ */
+    .feature-video {
+      background: var(--navy-dark);
+      padding: 76px 24px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-video::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 18% 0%, rgba(232,93,4,.24), transparent 34%);
+      pointer-events: none;
+    }
+    .video-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .video-wrap h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .video-wrap h2 span { color: var(--yellow); }
+    .video-wrap p {
+      color: rgba(255,255,255,.66);
+      font-size: .92rem;
+      line-height: 1.85;
+      margin: 0 auto 26px;
+      max-width: 560px;
+    }
+    .video-frame {
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0,0,0,.35);
+      background: #000;
+      aspect-ratio: 16/9;
+    }
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .video-cta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
     /* ══ 02 WHY ══ */
     .why { background: var(--white); }
     .why-split {
@@ -421,6 +479,14 @@
       .hero-cta { flex-direction: column; align-items: center; gap: 12px; }
       .btn-primary, .btn-outline { width: 100%; max-width: 320px; text-align: center; padding: 14px 20px; font-size: .95rem; }
 
+      /* video */
+      .feature-video { padding: 52px 18px; }
+      .video-wrap p { font-size: .84rem; margin-bottom: 18px; }
+      .video-frame { border-radius: 12px; }
+      .video-cta { flex-direction: column; align-items: center; gap: 10px; }
+      .video-cta .btn-primary,
+      .video-cta .btn-outline { width: 100%; max-width: 320px; }
+
       /* why */
       .why-img { order: -1; }
       .wcard { padding: 18px 14px; }
@@ -504,6 +570,25 @@
     <div class="hero-cta">
       <a href="https://lin.ee/Q8pqMSK" target="_blank" rel="noopener" class="btn-primary">加入官方 LINE 詢問</a>
       <a href="register.html" class="btn-outline">立即報名</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURE VIDEO ══ -->
+<section class="feature-video" id="video">
+  <div class="video-wrap">
+    <span class="label label--light">Real Class Moment</span>
+    <h2>看見孩子放學後<br/><span>真正動起來</span></h2>
+    <p>真實課程片段，讓家長更快了解武樂的上課節奏、孩子互動與運動氛圍。</p>
+    <div class="video-frame">
+      <video autoplay muted loop playsinline preload="metadata" poster="images/section2-wushu.jpg">
+        <source src="videos/afterschool-highlight.mp4" type="video/mp4" />
+        您的瀏覽器不支援影片播放。
+      </video>
+    </div>
+    <div class="video-cta">
+      <a href="register.html" class="btn-primary">立即報名</a>
+      <a href="https://lin.ee/Q8pqMSK" target="_blank" rel="noopener" class="btn-outline">加入官方 LINE 詢問</a>
     </div>
   </div>
 </section>
