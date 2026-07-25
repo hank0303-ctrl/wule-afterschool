@@ -581,8 +581,8 @@
     <h2>看見孩子放學後<br/><span>真正動起來</span></h2>
     <p>真實課程片段，讓家長更快了解武樂的上課節奏、孩子互動與運動氛圍。</p>
     <div class="video-frame">
-      <video autoplay muted loop playsinline preload="metadata" poster="images/section2-wushu.jpg">
-        <source src="videos/afterschool-highlight.mp4?v=1" type="video/mp4" />
+      <video autoplay muted loop playsinline preload="auto" poster="images/video-poster-boxing.png">
+        <source src="videos/afterschool-highlight.mp4?v=2" type="video/mp4" />
         您的瀏覽器不支援影片播放。
       </video>
     </div>
@@ -1014,6 +1014,11 @@
     if (!open) { el.classList.add('active'); a.classList.add('open'); }
   }
 
+  window.addEventListener('load', () => {
+    document.querySelectorAll('video[autoplay]').forEach(video => {
+      video.play().catch(() => {});
+    });
+  });
 </script>
 
 </body>
