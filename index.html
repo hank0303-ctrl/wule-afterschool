@@ -511,17 +511,17 @@
       .sched .label { font-size: 10px; letter-spacing: 4px; margin-bottom: 10px; }
       .sched .title { font-size: 1.62rem; line-height: 1.2; margin-bottom: 18px; }
       .week-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 0; }
-      .day { display: grid; grid-template-columns: 88px 1fr; border-radius: 10px; min-height: 0; }
+      .day { display: grid; grid-template-columns: 74px 1fr; border-radius: 10px; min-height: 0; }
       .day-h { padding: 10px 9px; justify-content: center; gap: 3px; }
       .day-en { font-size: .5rem; letter-spacing: 1.5px; }
       .day-zh { font-size: 1rem; line-height: 1.1; }
-      .day-th { font-size: .58rem; line-height: 1.35; }
       .day-b { padding: 9px 10px; display: grid; gap: 7px; }
-      .slot { display: grid; grid-template-columns: 82px 1fr; align-items: center; column-gap: 8px; }
+      .slot { display: grid; grid-template-columns: 74px 52px 1fr; align-items: center; column-gap: 7px; }
       .slot + .slot { margin-top: 0; border-top: 1px solid rgba(255,255,255,.07); padding-top: 7px; }
       .s-time { font-size: .58rem; margin-bottom: 0; line-height: 1.2; }
-      .s-name { font-size: .82rem; margin-bottom: 0; line-height: 1.25; }
-      .s-tags { display: none; }
+      .s-name { font-size: .78rem; margin-bottom: 0; line-height: 1.25; }
+      .s-tags { display: flex; gap: 4px; flex-wrap: nowrap; }
+      .s-tags span { padding: 1px 5px; font-size: 9px; border-radius: 5px; white-space: nowrap; }
       .sched-note { margin-top: 12px; padding: 10px 12px; font-size: .7rem; line-height: 1.55; }
 
       /* courses */
@@ -699,7 +699,6 @@
       <div class="day">
         <div class="day-h or">
           <span class="day-en">MON</span><span class="day-zh">週一</span>
-          <span class="day-th">武術 × 體能</span>
         </div>
         <div class="day-b">
           <div class="slot">
@@ -717,7 +716,6 @@
       <div class="day">
         <div class="day-h di">
           <span class="day-en">TUE</span><span class="day-zh">週二</span>
-          <span class="day-th">武術 × 進階武術</span>
         </div>
         <div class="day-b">
           <div class="slot">
@@ -735,7 +733,6 @@
       <div class="day">
         <div class="day-h or">
           <span class="day-en">WED</span><span class="day-zh">週三</span>
-          <span class="day-th">拳擊 × 翻滾</span>
         </div>
         <div class="day-b">
           <div class="slot">
@@ -753,7 +750,6 @@
       <div class="day">
         <div class="day-h di">
           <span class="day-en">THU</span><span class="day-zh">週四</span>
-          <span class="day-th">體能課</span>
         </div>
         <div class="day-b">
           <div class="slot">
@@ -766,7 +762,6 @@
       <div class="day">
         <div class="day-h yw">
           <span class="day-en">FRI</span><span class="day-zh">週五</span>
-          <span class="day-th">武術課</span>
         </div>
         <div class="day-b">
           <div class="slot">
