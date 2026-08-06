@@ -347,8 +347,10 @@
       margin-top: 16px; font-size: .72rem; color: rgba(255,255,255,.28); text-align: center;
     }
 
-    /* Values below gallery */
+    /* Values */
     .values-wrap { margin-top: 56px; }
+    .values-section { background: var(--navy-dark); }
+    .values-section .values-wrap { margin-top: 0; }
     .values-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 32px; }
     @media(max-width:760px){ .values-grid { grid-template-columns: 1fr 1fr; } }
     .vcard {
@@ -806,27 +808,9 @@
   </div>
 </section>
 
-<!-- ══ 06 GALLERY + VALUES ══ -->
-<section class="gallery">
+<!-- ══ 06 VALUES ══ -->
+<section class="values-section">
   <div class="container">
-    <span class="label label--light">Gallery</span>
-    <h2 class="title title--white" style="margin-bottom:8px;">看見孩子在武樂的每一次成長</h2>
-    <p style="color:rgba(255,255,255,.5); font-size:.88rem; margin-bottom:26px; max-width:480px; line-height:1.8;">
-      真實課程實況，記錄孩子從嘗試、練習到完成挑戰的瞬間。
-    </p>
-    <div class="gal-grid" id="galGrid">
-      <div class="gi"><img src="images/section2-wushu.jpg" alt="武術訓練" /><span class="gi-label">武術訓練</span></div>
-      <div class="gi"><img src="images/gallery-wushu-punch.jpg" alt="武術訓練" /><span class="gi-label">武術訓練</span></div>
-      <div class="gi"><img src="images/course-boxing.jpg" alt="拳擊訓練" /><span class="gi-label">拳擊訓練</span></div>
-      <div class="gi"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/modal_boxing.jpg" alt="拳擊訓練" /><span class="gi-label">拳擊訓練</span></div>
-      <div class="gi"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_04.jpg" alt="體能挑戰" /><span class="gi-label">體能挑戰</span></div>
-      <div class="gi"><img src="images/course-tumble.jpg" alt="翻滾練習" /><span class="gi-label">翻滾練習</span></div>
-      <div class="gi"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_07.jpg" alt="課堂互動" /><span class="gi-label">課堂互動</span></div>
-      <div class="gi"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_08.jpg" alt="體能挑戰" /><span class="gi-label">體能挑戰</span></div>
-    </div>
-    <p class="gal-note">所有課程照片皆為武樂實際上課紀錄，課程內容會依孩子年齡、程度與當期安排調整。</p>
-
-    <!-- Values -->
     <div class="values-wrap">
       <h2 class="title title--white tc" style="margin-bottom:6px;">在武樂，孩子學的不只是動作</h2>
       <p class="tc" style="color:rgba(255,255,255,.5); font-size:.88rem; margin-bottom:32px;">每一堂課，都是建立人格的機會。</p>
@@ -853,6 +837,29 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ══ 07 GALLERY ══ -->
+<section class="gallery">
+  <div class="container">
+    <span class="label label--light">Gallery</span>
+    <h2 class="title title--white" style="margin-bottom:8px;">看見孩子在武樂的每一次成長</h2>
+    <p style="color:rgba(255,255,255,.5); font-size:.88rem; margin-bottom:26px; max-width:480px; line-height:1.8;">
+      真實課程實況，記錄孩子從嘗試、練習到完成挑戰的瞬間。
+    </p>
+    <div class="gal-grid" id="galGrid">
+      <div class="gi"><img src="images/section2-wushu.jpg" alt="武術訓練" /><span class="gi-label">武術訓練</span></div>
+      <div class="gi"><img src="images/gallery-wushu-punch.jpg" alt="武術訓練" /><span class="gi-label">武術訓練</span></div>
+      <div class="gi"><img src="images/course-boxing.jpg" alt="拳擊訓練" /><span class="gi-label">拳擊訓練</span></div>
+      <div class="gi"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/modal_boxing.jpg" alt="拳擊訓練" /><span class="gi-label">拳擊訓練</span></div>
+      <div class="gi"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_04.jpg" alt="體能挑戰" /><span class="gi-label">體能挑戰</span></div>
+      <div class="gi"><img src="images/course-tumble.jpg" alt="翻滾練習" /><span class="gi-label">翻滾練習</span></div>
+      <div class="gi"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_07.jpg" alt="課堂互動" /><span class="gi-label">課堂互動</span></div>
+      <div class="gi"><img src="https://hank0303-ctrl.github.io/wule-camp-2026/images/photo_08.jpg" alt="體能挑戰" /><span class="gi-label">體能挑戰</span></div>
+    </div>
+    <p class="gal-note">所有課程照片皆為武樂實際上課紀錄，課程內容會依孩子年齡、程度與當期安排調整。</p>
+
   </div>
 </section>
 
