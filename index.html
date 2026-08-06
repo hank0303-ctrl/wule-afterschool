@@ -398,6 +398,13 @@
       border-left: 4px solid var(--orange); margin-bottom: 52px;
       font-size: .86rem; color: var(--gray); line-height: 1.85;
     }
+    .fee-free {
+      display: inline-block;
+      color: var(--orange);
+      font-size: 1.12rem;
+      font-weight: 900;
+      line-height: 1.3;
+    }
 
     /* FAQ 2-col */
     .faq-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -510,7 +517,13 @@
       .values-grid { grid-template-columns: 1fr 1fr; }
 
       /* plans */
-      .plan-grid { grid-template-columns: 1fr; }
+      .plan-grid { grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+      .pcard { padding: 14px 12px; border-radius: 10px; }
+      .pcard-n { margin-bottom: 5px; font-size: .58rem; letter-spacing: 1.2px; }
+      .pcard-icon { font-size: 1.25rem; margin-bottom: 5px; }
+      .pcard h3 { font-size: .86rem; margin-bottom: 4px; }
+      .pcard p { font-size: .7rem; line-height: 1.55; }
+      .pcard-tag { top: 8px; right: 8px; font-size: .55rem; padding: 2px 6px; }
       .faq-cols { grid-template-columns: 1fr; }
 
       /* cta box */
@@ -520,7 +533,8 @@
       .cta-btns .btn-outline-dark { width: 100%; max-width: 300px; text-align: center; }
 
       /* price note */
-      .price-note { padding: 16px 18px; margin-bottom: 36px; }
+      .price-note { padding: 15px 16px; margin-bottom: 34px; font-size: .76rem; line-height: 1.7; }
+      .fee-free { display: block; margin-top: 6px; font-size: 1rem; }
 
       /* footer */
       footer { padding: 24px 18px; }
@@ -876,7 +890,7 @@
     </div>
 
     <div class="price-note">
-      實際費用會依參與課程、每週天數、月份安排與銜接需求不同而有所差異。歡迎加入官方 LINE，提供孩子年級、學校、放學時間與希望參與的課程，我們會協助評估。
+      實際費用會依參與課程、每週天數、月份安排與銜接需求不同而有所差異。歡迎加入官方 LINE，提供孩子的年級、學校、放學時間及希望參與的課程，我們會協助評估與安排。若同一補習班或學校有其他學員可於相近時段一同接送，則<span class="fee-free">可免收接送費用。</span>
     </div>
 
     <!-- FAQ -->
