@@ -192,7 +192,7 @@
       background: #000;
       aspect-ratio: 16/9;
     }
-    .video-frame img {
+    .video-frame video {
       width: 100%;
       height: 100%;
       display: block;
@@ -594,7 +594,10 @@
     <h2>看見孩子放學後<br/><span>真正動起來</span></h2>
     <p>真實課程片段，讓家長更快了解武樂的上課節奏、孩子互動與運動氛圍。</p>
     <div class="video-frame">
-      <img src="images/video-poster-boxing.png" alt="武樂兒童拳擊課程實況" />
+      <video autoplay muted loop playsinline preload="metadata" poster="images/video-poster-boxing.png">
+        <source src="videos/afterschool-highlight-mobile.mp4?v=4" type="video/mp4" />
+        您的瀏覽器不支援影片播放。
+      </video>
     </div>
     <div class="video-cta">
       <a href="register.html" class="btn-primary">立即報名</a>
