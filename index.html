@@ -209,6 +209,7 @@
       box-shadow: var(--sh2); aspect-ratio: 4/3;
     }
     .why-img img { width: 100%; height: 100%; object-fit: cover; object-position: 60% center; }
+    .why-cutout { display: none; }
     .why-text .orange { color: var(--orange); font-weight: 700; font-size: 1rem; margin-bottom: 16px; line-height: 1.75; }
     .why-text p { font-size: .9rem; color: var(--gray); line-height: 1.9; margin-bottom: 12px; }
     .why-text .highlight { font-weight: 700; color: var(--navy); font-size: .95rem; }
@@ -467,27 +468,40 @@
         position: relative;
         min-height: 0;
       }
-      .why-text { padding-right: 112px; }
+      .why-text { padding-right: 0; }
       .why-img {
         display: block;
         position: absolute;
-        top: 4px;
-        right: 0;
-        width: 96px;
-        aspect-ratio: 1;
-        border-radius: 14px;
-        box-shadow: 0 12px 28px rgba(0,0,0,.16);
+        top: 0;
+        right: -4px;
+        width: 136px;
+        height: 170px;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
+        aspect-ratio: auto;
       }
+      .why-photo { display: none; }
+      .why-cutout { display: block; object-fit: contain; object-position: center bottom; }
       .why .label { font-size: 10px; letter-spacing: 3px; margin-bottom: 8px; }
-      .why .title { font-size: 1.62rem; line-height: 1.18; margin-bottom: 12px; }
-      .why-text .orange { font-size: .9rem; line-height: 1.55; margin-bottom: 10px; }
+      .why .title {
+        max-width: calc(100% - 118px);
+        font-size: 1.58rem;
+        line-height: 1.16;
+        margin-bottom: 12px;
+      }
+      .why-text .orange {
+        max-width: calc(100% - 124px);
+        font-size: .86rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
       .why-text p { font-size: .78rem; line-height: 1.62; margin-bottom: 8px; }
       .why-text .highlight { font-size: .82rem; line-height: 1.6; }
       .why-cards {
         grid-template-columns: repeat(3, minmax(0,1fr));
         gap: 7px;
         margin-top: 14px;
-        margin-left: -112px;
       }
       .wcard { padding: 10px 8px; border-radius: 10px; border-top-width: 3px; }
       .wcard-n { font-size: .52rem; letter-spacing: 1.2px; margin-bottom: 5px; }
@@ -665,7 +679,8 @@
         </div>
       </div>
       <div class="why-img">
-        <img src="images/section2-wushu.jpg" alt="武樂武術課程" />
+        <img class="why-photo" src="images/section2-wushu.jpg" alt="武樂武術課程" />
+        <img class="why-cutout" src="images/why-kid-cutout.png" alt="武樂兒童武術訓練" />
       </div>
     </div>
   </div>
