@@ -462,14 +462,33 @@
 
       /* why */
       .why { padding: 36px 14px 38px; }
-      .why-split { gap: 0; }
-      .why-img { display: none; }
+      .why-split {
+        display: block;
+        position: relative;
+        min-height: 0;
+      }
+      .why-text { padding-right: 112px; }
+      .why-img {
+        display: block;
+        position: absolute;
+        top: 4px;
+        right: 0;
+        width: 96px;
+        aspect-ratio: 1;
+        border-radius: 14px;
+        box-shadow: 0 12px 28px rgba(0,0,0,.16);
+      }
       .why .label { font-size: 10px; letter-spacing: 3px; margin-bottom: 8px; }
       .why .title { font-size: 1.62rem; line-height: 1.18; margin-bottom: 12px; }
       .why-text .orange { font-size: .9rem; line-height: 1.55; margin-bottom: 10px; }
       .why-text p { font-size: .78rem; line-height: 1.62; margin-bottom: 8px; }
       .why-text .highlight { font-size: .82rem; line-height: 1.6; }
-      .why-cards { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 7px; margin-top: 14px; }
+      .why-cards {
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        gap: 7px;
+        margin-top: 14px;
+        margin-left: -112px;
+      }
       .wcard { padding: 10px 8px; border-radius: 10px; border-top-width: 3px; }
       .wcard-n { font-size: .52rem; letter-spacing: 1.2px; margin-bottom: 5px; }
       .wcard h3 { font-size: .78rem; margin-bottom: 4px; line-height: 1.25; }
