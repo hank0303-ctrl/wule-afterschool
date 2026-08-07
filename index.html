@@ -198,14 +198,6 @@
       display: block;
       object-fit: cover;
     }
-    .video-cta {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
-    }
-
     /* ══ 02 WHY ══ */
     .why { background: var(--white); }
     .why-split {
@@ -467,13 +459,21 @@
       .feature-video { padding: 52px 18px; }
       .video-wrap p { font-size: .84rem; margin-bottom: 18px; }
       .video-frame { border-radius: 12px; }
-      .video-cta { flex-direction: column; align-items: center; gap: 10px; }
-      .video-cta .btn-primary,
-      .video-cta .btn-outline { width: 100%; max-width: 320px; }
 
       /* why */
-      .why-img { order: -1; }
-      .wcard { padding: 18px 14px; }
+      .why { padding: 36px 14px 38px; }
+      .why-split { gap: 0; }
+      .why-img { display: none; }
+      .why .label { font-size: 10px; letter-spacing: 3px; margin-bottom: 8px; }
+      .why .title { font-size: 1.62rem; line-height: 1.18; margin-bottom: 12px; }
+      .why-text .orange { font-size: .9rem; line-height: 1.55; margin-bottom: 10px; }
+      .why-text p { font-size: .78rem; line-height: 1.62; margin-bottom: 8px; }
+      .why-text .highlight { font-size: .82rem; line-height: 1.6; }
+      .why-cards { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 7px; margin-top: 14px; }
+      .wcard { padding: 10px 8px; border-radius: 10px; border-top-width: 3px; }
+      .wcard-n { font-size: .52rem; letter-spacing: 1.2px; margin-bottom: 5px; }
+      .wcard h3 { font-size: .78rem; margin-bottom: 4px; line-height: 1.25; }
+      .wcard p { font-size: .64rem; line-height: 1.45; margin-bottom: 0; }
 
       /* who */
       .who { padding: 34px 14px 42px; }
@@ -509,8 +509,23 @@
       .sched-note { margin-top: 12px; padding: 10px 12px; font-size: .7rem; line-height: 1.55; }
 
       /* courses */
-      .crs-grid { grid-template-columns: 1fr; }
-      .crs-img { aspect-ratio: 16/9; }
+      .courses { padding: 40px 14px 44px; }
+      .courses .label { font-size: 10px; letter-spacing: 4px; margin-bottom: 8px; }
+      .courses .title { font-size: 1.72rem; line-height: 1.16; margin-bottom: 8px; }
+      .courses .sub { font-size: .82rem; line-height: 1.55; }
+      .crs-grid { grid-template-columns: 1fr; gap: 10px; margin-top: 20px; }
+      .crs {
+        display: grid;
+        grid-template-columns: 104px 1fr;
+        border-radius: 12px;
+      }
+      .crs-img { aspect-ratio: auto; height: 112px; }
+      .crs-img img { height: 100%; }
+      .crs-badge { width: 34px; height: 28px; top: 8px; left: 8px; font-size: .72rem; border-radius: 7px; }
+      .crs-body { padding: 11px 12px; display: flex; flex-direction: column; justify-content: center; }
+      .crs-kw { font-size: .7rem; margin-bottom: 3px; }
+      .crs-body h3 { font-size: .92rem; margin-bottom: 5px; }
+      .crs-body p { font-size: .7rem; line-height: 1.5; }
 
       /* gallery */
       .gal-grid { grid-template-columns: repeat(2,1fr); gap: 8px; }
@@ -598,10 +613,6 @@
         <source src="videos/afterschool-highlight-mobile.mp4?v=4" type="video/mp4" />
         您的瀏覽器不支援影片播放。
       </video>
-    </div>
-    <div class="video-cta">
-      <a href="register.html" class="btn-primary">立即報名</a>
-      <a href="https://lin.ee/Q8pqMSK" target="_blank" rel="noopener" class="btn-outline">加入官方 LINE 詢問</a>
     </div>
   </div>
 </section>
