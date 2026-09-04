@@ -25,6 +25,45 @@ function doGet(e) {
     .setMimeType(ContentService.MimeType.TEXT);
 }
 
+function syncHeaders(sheet) {
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(HEADERS);
+  } else {
+    var currentHeaders = sheet.getRange(1, 1, 1, Math.max(sheet.getLastColumn(), 1)).getValues()[0];
+
+    for (var i = 0; i < HEADERS.length; i++) {
+      currentHeaders = sheet.getRange(1, 1, 1, Math.max(sheet.getLastColumn(), 1)).getValues()[0];
+      if (currentHeaders[i] === HEADERS[i]) {
+        continue;
+      }
+
+      var foundAt = -1;
+      for (var j = i + 1; j < currentHeaders.length; j++) {
+        if (currentHeaders[j] === HEADERS[i]) {
+          foundAt = j;
+          break;
+        }
+      }
+
+      if (foundAt === -1) {
+        if (i < sheet.getLastColumn()) {
+          sheet.insertColumnBefore(i + 1);
+        } else {
+          sheet.insertColumnAfter(sheet.getLastColumn());
+        }
+      }
+
+      sheet.getRange(1, i + 1).setValue(HEADERS[i]);
+    }
+  }
+
+  sheet.getRange(1, 1, 1, HEADERS.length)
+    .setFontWeight('bold')
+    .setBackground('#1B2A4A')
+    .setFontColor('#FFFFFF');
+  sheet.setFrozenRows(1);
+}
+
 function doPost(e) {
   try {
     var raw  = e.postData ? e.postData.contents : '';
@@ -41,14 +80,7 @@ function doPost(e) {
       sheet = ss.insertSheet(SHEET_NAME);
     }
 
-    if (sheet.getLastRow() === 0) {
-      sheet.appendRow(HEADERS);
-      sheet.getRange(1, 1, 1, HEADERS.length)
-        .setFontWeight('bold')
-        .setBackground('#1B2A4A')
-        .setFontColor('#FFFFFF');
-      sheet.setFrozenRows(1);
-    }
+    syncHeaders(sheet);
 
     var row = [
       data.submitTime         || new Date().toLocaleString('zh-TW'),
@@ -95,6 +127,8 @@ function doPost(e) {
         '收到一筆新的放學後課程報名表。\n\n'
         + '孩子姓名：' + (data.childName || '') + '\n'
         + '年級：'     + (data.grade || '') + '\n'
+        + '報名項目：' + (data.programItems || '') + '\n'
+        + '課程時間：' + (data.programDetails || '') + '\n'
         + '家長姓名：' + (data.parentName || '') + '\n'
         + '手機：'     + (data.phone || '') + '\n'
         + '送出時間：' + (data.submitTime || '') + '\n\n'
