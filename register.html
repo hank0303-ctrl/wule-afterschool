@@ -732,7 +732,7 @@
 
 <script>
   /* ── GAS endpoint：建立 Google Apps Script 後填入 ── */
-  const GAS_URL = 'https://script.google.com/macros/s/AKfycbzemC08zdZjqK4KdkZjdLo3UUiD651hlsT-o-CDxfxtuOkfQK4Y1ZN7jx8QxbzvIJQt/exec';
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbyAVs4xw_T4PTW45gkCGlX7tPlYGnuCWIK-lA9etM830KkyGHHzNpwyMmiXWItKNSXZRw/exec';
 
   /* Terms agree */
   const agreeCheck = document.getElementById('agreeCheck');
@@ -839,6 +839,7 @@
     data.diet = diets.join('、') || '未填寫';
     data.programItems = programs.join('、');
     data.programDetails = courses.join('\n');
+    data.action = 'submitAfterschoolRegistration';
     fd.forEach((v, k) => { if (k !== 'diet' && k !== 'programDays' && k !== 'programCourses') data[k] = v; });
     data.submitTime = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
 
